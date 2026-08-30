@@ -1,5 +1,5 @@
 <!--@layout(/layout/basic/layout.html)-->
-<div class="section path" module="product_headcategory" data-ez-module="product-head-breadcrumb/1">
+<div class="section path" module="product_headcategory" data-ez-module="product-head-breadcrumb/1" data-ez="contents-1djr8ih-1">
     <span>현재 위치</span>
     <ol>
         <li><a href="/">홈</a></li>
@@ -9,10 +9,10 @@
         <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
     </ol>
 </div>
-<div class="titleArea display_tablet_only" data-ez-module="product-detail-head-title-mobile/1">
+<div class="titleArea display_tablet_only" data-ez-module="product-detail-head-title-mobile/1" data-ez="contents-0shzf9m-1">
     <h2>상품상세 정보</h2>
 </div>
-<div class="section" module="product_detail">
+<div class="section" module="product_detail" data-ez="contents-1i9xfyp-1">
     <!--@css(/css/module/product/detail.css)-->
     <!--@js(/js/module/product/detail.js)-->
     <!--
@@ -578,7 +578,7 @@
                 <div id="{$app_payment_button_box_id}"></div>
                 <div module="myshop_asyncbenefit" class="ec-base-box typeMember gMessage {$display_benefit|display}">
                     <div class="information {$display_benefit|display}">
-                        <strong class="thumbnail"><img src="{$group_image}" alt="" onerror="this.src='//img.echosting.cafe24.com/skin/base/member/img_member_default.gif';" class="{$group_image_tag_class}" /></strong>
+                        <strong class="thumbnail"><img src="{$group_image}" alt onerror="this.src='//img.echosting.cafe24.com/skin/base/member/img_member_default.gif';" class="{$group_image_tag_class}"></strong>
                         <div class="description">
 							<p class="message {$display_benefit|display}">안녕하세요. {$member_name}님!</p>
                             <p class="member">고객님의 회원등급은 <em>{$group_name}</em> 입니다.</p>
@@ -607,7 +607,7 @@
     </div>
 </div>
 <!--@import(/coupon/coupon_productdetail.html)-->
-<div class="section" module="product_additional">
+<div class="section" module="product_additional" data-ez="contents-0j6i983-1" style="margin-bottom: 50px;">
     <!--@css(/css/module/product/additional.css)-->
 	<!--@import(/board/report_popup.html)-->
 	<div id="detail" class="cboth"></div>
@@ -906,3 +906,4 @@
 	</div><!-- //prdInfo -->
 </div>
 <!--@define(cmc_log)-->
+<!--#ez="1/6"-->
