@@ -1,9 +1,257 @@
-<div app4you-smart-banner="smart-banner-admin-RES00002" app4you-smart-banner-html="true" class="xans-element- xans-smart-banner-admin xans-smart-banner-admin-RES00002 section" data-ez="module-0v4nwaw-1">
-  <a href="javascript:void(0)\;" style="cursor:default">
-    <picture>
-      <source media="(max-width: 720px)" srcset="/smart-banner/init/smartbanner-02-01-mobile.png" loading="lazy" ez-prevent="img">
-      <img src="/smart-banner/init/smartbanner-02-01-pc.png" style="width:100%" loading="lazy" ez-prevent="img">
-    </picture>
-  </a>
-</div>
+<!-- =========================================
+     JUN & JAY BRAND STORY
+========================================== -->
+
+<section class="jj-brand-story">
+  <div class="jj-brand-story__inner">
+    <!-- LOGO -->
+    <div class="jj-brand-story__logo">
+      <img src="/web/upload/junandjay-logo.png" alt="JUN & JAY" />
+    </div>
+
+    <!-- TITLE -->
+    <h2 class="jj-brand-story__title">
+      Made for little days,<br />
+      remembered forever.
+    </h2>
+
+    <!-- DESCRIPTION -->
+    <p class="jj-brand-story__text">
+      작고 소중한 오늘의 순간들이 오래도록 기억될 수 있도록.<br />
+      준앤재이는 아이들의 매일에 편안함과 따뜻함을 더합니다.
+    </p>
+
+    <!-- LINK -->
+    <a href="/shopinfo/company.html" class="jj-brand-story__link">
+      OUR STORY
+    </a>
+  </div>
+</section>
+
+<style>
+  /* =========================================
+   BRAND STORY
+========================================== */
+
+  .jj-brand-story {
+    position: relative;
+
+    width: 100%;
+
+    padding: 150px 20px;
+
+    background: #f8f4ee;
+
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* =========================================
+   INNER
+========================================== */
+
+  .jj-brand-story__inner {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  /* =========================================
+   LOGO
+========================================== */
+
+  .jj-brand-story__logo {
+    margin: 0 0 38px;
+  }
+
+  .jj-brand-story__logo img {
+    display: block;
+
+    width: 230px;
+    max-width: 70%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+  }
+
+  /* =========================================
+   TITLE
+========================================== */
+
+  .jj-brand-story__title {
+    margin: 0;
+
+    color: #252321;
+
+    font-family: "Montserrat", "Noto Sans KR", Arial, sans-serif;
+
+    font-size: 36px;
+    font-weight: 400;
+
+    line-height: 1.38;
+
+    letter-spacing: -0.035em;
+  }
+
+  /* =========================================
+   DESCRIPTION
+========================================== */
+
+  .jj-brand-story__text {
+    margin: 30px 0 0;
+
+    color: #756f69;
+
+    font-family: "Noto Sans KR", sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 2;
+
+    letter-spacing: -0.02em;
+
+    word-break: keep-all;
+  }
+
+  /* =========================================
+   OUR STORY
+========================================== */
+
+  .jj-brand-story__link {
+    position: relative;
+
+    display: inline-block;
+
+    margin-top: 48px;
+    padding: 0 1px 7px;
+
+    color: #292725;
+
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+
+    text-decoration: none;
+
+    transition: opacity 0.25s ease;
+  }
+
+  /* 밑줄 */
+  .jj-brand-story__link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: #292725;
+
+    transform: scaleX(1);
+    transform-origin: left center;
+
+    transition: transform 0.3s ease;
+  }
+
+  /* hover */
+  .jj-brand-story__link:hover {
+    opacity: 0.65;
+  }
+
+  .jj-brand-story__link:hover::after {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+
+  /* =========================================
+   TABLET
+========================================== */
+
+  @media all and (max-width: 1024px) {
+    .jj-brand-story {
+      padding: 120px 24px;
+    }
+
+    .jj-brand-story__logo img {
+      width: 210px;
+    }
+
+    .jj-brand-story__title {
+      font-size: 32px;
+    }
+  }
+
+  /* =========================================
+   MOBILE
+========================================== */
+
+  @media all and (max-width: 767px) {
+    .jj-brand-story {
+      padding: 90px 20px;
+    }
+
+    /* LOGO */
+
+    .jj-brand-story__logo {
+      margin-bottom: 28px;
+    }
+
+    .jj-brand-story__logo img {
+      width: 165px;
+      max-width: 65%;
+    }
+
+    /* TITLE */
+
+    .jj-brand-story__title {
+      font-size: 25px;
+
+      line-height: 1.42;
+
+      letter-spacing: -0.03em;
+    }
+
+    /* TEXT */
+
+    .jj-brand-story__text {
+      max-width: 320px;
+
+      margin: 24px auto 0;
+
+      font-size: 13px;
+
+      line-height: 1.9;
+
+      letter-spacing: -0.025em;
+    }
+
+    .jj-brand-story__text br {
+      display: none;
+    }
+
+    /* BUTTON */
+
+    .jj-brand-story__link {
+      margin-top: 36px;
+
+      font-size: 11px;
+    }
+  }
+</style>
+
 <!--#ez="1/1"-->

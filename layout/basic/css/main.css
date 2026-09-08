@@ -10,7 +10,8 @@
 .main_title.ez-align-left {text-align:left;justify-content:flex-start;}
 .main_title.ez-align-center {text-align:center;justify-content:center;}
 .main_title.ez-align-right {text-align:right;justify-content:flex-end;}
-
+.main_title.ez-align-center { margin-top:0px}
+.main_title.ez-align-center2 { margin-top:100px}
 /* 스마트배너 */
 .xans-smart-banner-admin {margin:0 auto 120px;}
 

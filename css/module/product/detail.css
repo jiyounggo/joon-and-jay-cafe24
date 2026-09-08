@@ -330,230 +330,2593 @@
 	.xans-product-detail .mileage_tooltip th {padding-left:5px;}
 }
 
+/* =========================================================
+   JUN & JAY PRODUCT DETAIL
+   warm / minimal / editorial
+   ========================================================= */
 
-/** 오우이_style 210913 **/
+:root {
+  --jj-bg: #ffffff;
+  --jj-soft: #faf8f5;
+  --jj-soft-2: #f5f1ec;
+  --jj-line: #e9e4de;
+  --jj-line-dark: #d8d1c9;
+  --jj-text: #252321;
+  --jj-muted: #8b847c;
+  --jj-muted-2: #aaa29a;
+  --jj-point: #b79f8b;
+  --jj-point-dark: #8e7765;
+}
 
-/* 상세페이지 */
-.xans-product-detail {margin:0 auto 80px;}
-.xans-product-detail .imgArea {width:calc(100% - 650px);}
-.xans-product-detail .imgArea .listImg {height:auto;padding:0;}
-.xans-product-detail .imgArea .listImg .inner {height:auto;}
-.xans-product-detail .imgArea .listImg button {height:100%;background-color:#fff;opacity:0.7;}
-.xans-product-detail .imgArea .listImg li {width:94px;}
-.xans-product-detail .detailArea {position:relative;}
-.xans-product-detail .headingArea {border-top:2px solid #000;padding:20px 0;}
-.xans-product-detail .headingArea.sale_on {padding:20px 50px 20px 0;}
-.xans-product-detail .headingArea .icon {margin-bottom:15px;}
-.xans-product-detail .headingArea h1 {font-size:28px;font-weight:400;}
-.xans-product-detail .infoArea.ez-discount-tag-off .headingArea.sale_on {padding:20px 0;}
-.xans-product-detail .infoArea.ez-discount-tag-off .sale_box {display:none;}
-.xans-product-detail .infoArea table {margin-top:20px;table-layout:fixed;}
-.xans-product-detail .infoArea table .sale_box {position:absolute;top:20px;right:0px;width:50px;height:50px;font-size:14px;font-weight:700;text-align:center;color:#fff;background-color:#1a1a1a;line-height:1;border-radius:50%;display:flex;align-content:center;justify-content:center;align-items:center;}
-.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li {border-radius:50%;}
-.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li a {width:20px;height:20px;min-width:auto;}
-.xans-product-detail .xans-product-option .ec-product-button li a {height:24px;}
-.xans-product-detail .xans-product-option .ec-product-button li a span {line-height:1;padding:7px 5px;font-size:11px;}
-.xans-product-detail .infoArea {width:600px;margin:0 0 0 50px;}
-.xans-product-detail .infoArea table.xans-product-option {border-top:0;}
-.xans-product-detail .infoArea .xans-product-option {border-top:1px solid #e5e5e5;}
+/* ---------- detail layout ---------- */
+.xans-product-detail {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto 120px;
+  padding: 56px 40px 0;
+  box-sizing: border-box;
+  color: var(--jj-text);
+  background: var(--jj-bg);
+}
+
+.xans-product-detail .detailArea {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(48px, 6vw, 96px);
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+}
+
+.xans-product-detail .imgArea {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+}
+
+.xans-product-detail .infoArea {
+  flex: 0 0 430px;
+  width: 430px;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 0 0;
+  position: sticky;
+  top: 110px;
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+/* ---------- main image ---------- */
+.xans-product-image .prdImg .thumbnail {
+  display: block;
+  width: 100%;
+  margin: 0;
+  background: var(--jj-soft);
+}
+
+.xans-product-image .prdImg .thumbnail > a {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: var(--jj-soft);
+}
+
+.xans-product-image .prdImg .thumbnail > a > .BigImage {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+}
+
+.xans-product-image .BigImage,
+.xans-product-image .bigImage {
+  transition: none !important;
+}
+
+/* hide old zoom helper */
+#zoomMouseGiude,
+#zoomGuideImage,
+#image_zoom_small,
+#zoom_wrap {
+  display: none !important;
+}
+
+/* ===================================
+   PRODUCT DETAIL THUMBNAIL DESIGN
+   =================================== */
+
+.xans-product-detail .imgArea .listImg {
+  width: 100% !important;
+  height: auto !important;
+
+  margin: 18px 0 0 !important;
+  padding: 0 !important;
+
+  overflow: visible !important;
+}
+
+
+/* 썸네일 전체 가로 정렬 */
+.xans-product-detail .imgArea .listImg .inner {
+  display: flex !important;
+  align-items: flex-start !important;
+
+  gap: 10px !important;
+
+  width: 100% !important;
+  height: auto !important;
+
+  padding: 2px !important;
+
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* 카페24 기본 ul */
+.xans-product-detail .imgArea .listImg ul.list {
+  display: flex !important;
+  align-items: flex-start !important;
+
+  flex: 0 0 auto !important;
+
+  gap: 10px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* =========================
+   일반 썸네일
+   ========================= */
+
+.xans-product-detail .imgArea .listImg ul.list li {
+  position: relative !important;
+
+  flex: 0 0 76px !important;
+
+  width: 76px !important;
+  height: 96px !important;
+
+  margin: 0 !important;
+  padding: 3px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid transparent !important;
+  border-radius: 11px !important;
+
+  background: #fff !important;
+
+  box-sizing: border-box !important;
+
+  cursor: pointer !important;
+
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background-color 0.22s ease !important;
+}
+
+
+/* 이미지 */
+.xans-product-detail .imgArea .listImg ul.list li img img {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: none !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+
+  border-radius: 7px !important;
+
+  transform: scale(1) !important;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease !important;
+}
+
+
+/* =========================
+   선택된 썸네일
+   ========================= */
+
+.xans-product-detail .imgArea .listImg ul.list li.selected.selected {
+  border-color: #c99082 !important;
+
+  background: #fffafa !important;
+
+  box-shadow:
+    0 0 0 1px rgba(201, 144, 130, 0.08) !important;
+}
+
+
+/* 선택되면 안쪽 이미지 살짝 확대 */
+.xans-product-detail .imgArea .listImg ul.list li.selected img.selected img {
+  transform: scale(1.07) !important;
+}
+
+
+/* hover */
+.xans-product-detail .imgArea .listImg ul.list li:hover:hover {
+  border-color: #dfbbb2 !important;
+}
+
+
+/* hover 때도 아주 살짝 확대 */
+.xans-product-detail .imgArea .listImg ul.list li:hover img:hover img {
+  transform: scale(1.035) !important;
+}
+
+
+/* 선택된 상태에서는 hover해도 확대 유지 */
+.xans-product-detail .imgArea .listImg ul.list li.selected:hover img.selected:hover img {
+  transform: scale(1.07) !important;
+}
+
+
+/* 카페24 기존 이전/다음 버튼 숨김 */
+.xans-product-detail .imgArea .listImg button.prev,
+.xans-product-detail .imgArea .listImg button.next {
+  display: none !important;
+}
+
+/* custom representative thumbnail from current HTML */
+/* ---------- heading / title ---------- */
+.xans-product-detail .headingArea {
+  margin: 0;
+  padding: 0 0 24px;
+  border: 0;
+  border-bottom: 1px solid var(--jj-line);
+}
+
+.xans-product-detail .headingArea.sale_on {
+  padding: 0 54px 24px 0;
+}
+
+.xans-product-detail .headingArea .icon {
+  margin: 0 0 12px;
+}
+
+.xans-product-detail .headingArea h1 {
+  display: block;
+  margin: 0;
+  color: var(--jj-text);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+}
+
+.xans-product-detail .headingArea .icon_img {
+  max-height: 20px;
+}
+
+.xans-product-detail .infoArea table .sale_box {
+
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--jj-point-dark);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.xans-product-detail .infoArea.ez-discount-tag-off .sale_box {
+  display: none;
+}
+
+/* ---------- basic product information ---------- */
+.xans-product-detail .infoArea table {
+  width: 100%;
+  margin: 18px 0 0;
+  border: 0;
+  table-layout: fixed;
+  color: var(--jj-text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.xans-product-detail .infoArea th {
+  width: 105px;
+  padding: 8px 10px 8px 0;
+  color: var(--jj-muted);
+  font-weight: 400;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.xans-product-detail .infoArea td {
+  padding: 8px 0;
+  color: var(--jj-text);
+  vertical-align: middle;
+}
+
+.xans-product-detail .infoArea td strong {
+  font-weight: 500;
+}
+
+.xans-product-detail .infoArea td .sale {
+  color: var(--jj-muted-2);
+}
+
+.xans-product-detail .infoArea .guideArea {
+  margin: 14px 0 0;
+  color: var(--jj-muted);
+  font-size: 12px;
+}
+
+.xans-product-detail .infoArea .guideArea .info {
+  color: var(--jj-muted);
+}
+
+/* ---------- options ---------- */
+.xans-product-detail .infoArea table.xans-product-option,
+.xans-product-detail .infoArea .xans-product-option {
+  margin-top: 24px;
+  border-top: 1px solid var(--jj-line);
+}
+
 .xans-product-detail .xans-product-option tr,
-.xans-product-detail .xans-product-option td {display:revert;width:100%;}
+.xans-product-detail .xans-product-option td {
+  width: 100%;
+}
+
+.xans-product-detail .xans-product-option th {
+  color: var(--jj-muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.xans-product-detail .xans-product-option tr:first-child th,
+.xans-product-detail .xans-product-option .xans-product-fileoption th {
+  padding-top: 22px;
+}
+
 .xans-product-detail .xans-product-option tr:first-child td,
-.xans-product-detail .xans-product-option .xans-product-fileoption td {padding:20px 0;}
-.xans-product-detail .xans-product-option tr:first-child th {padding-top:22px;}
-.xans-product-detail .xans-product-option td .xans-product-addoption th,
-.xans-product-detail .xans-product-option td .xans-product-fileoption th {padding-top:0 !important;}
-.xans-product-detail .xans-product-option tr.xans-product-addoption th {padding-top:28px;}
-.xans-product-detail .xans-product-option tr.xans-product-fileoption th {padding-top:30px;}
-.xans-product-detail .xans-product-option td select {margin-top:-7px;}
-.xans-product-detail #totalPrice .total strong {font-size:20px;}
-.xans-product-detail .infoArea .guideArea {margin:10px 0;}
-.xans-product-detail .infoArea .guideArea .info {color:#9a9a9a;}
-.xans-product-detail .productSet .option > li {border:0;}
-.xans-product-detail .xans-product-option .ec-product-button .ec-product-soldout a span:before {margin:25px 0px 0 -66px;}
-.xans-product-detail .mileage_tooltip .mileage_layer {padding:14px;}
+.xans-product-detail .xans-product-option .xans-product-fileoption td {
+  padding: 18px 0;
+}
 
-/* 월 렌탈 */
-.xans-product-detail .infoArea .rental th { vertical-align:top; }
-.xans-product-detail .infoArea .rental p { display:inline-block; font-size:12px; }
-.xans-product-detail .infoArea .rental span { color:#999; }
-.xans-product-detail .infoArea .rental ul { margin-top:8px; }
-.xans-product-detail .infoArea .rental ul li { padding-bottom:4px; color:#999; }
+.xans-product-detail .infoArea select {
+  width: 100%;
+  height: 46px;
+  margin: 0 !important;
+  padding: 0 42px 0 14px;
+  border: 1px solid var(--jj-line-dark);
+  border-radius: 0;
+  color: var(--jj-text);
+  background-color: #fff;
+  font-size: 13px;
+  box-sizing: border-box;
+  outline: none;
+}
 
-/* 재입고알림 버튼 */
-.xans-product-detail .infoArea td #span_product_price_text {margin-right:5px;}
+.xans-product-detail .infoArea select:focus {
+  border-color: var(--jj-text);
+}
 
-/* 구매버튼 */
-.xans-product-action .action_button {display:flex;}
-.xans-product-action .action_button .btnNormal {flex:1;height:70px;padding:25px 0;font-size:16px;font-weight:400;}
-.xans-product-action .action_button .btnSubmit {flex-basis:230px;height:70px;padding:25px 0;font-size:16px;font-weight:400;}
-.xans-product-action .action_button [class^='btn'] + [class^='btn'] {margin-left:20px;}
-.xans-product-action .action_button .sub_sold {flex:1;background-color:#000;color:#fff;font-size:16px;line-height:66px;font-weight:400;text-align:center;}
-.mrt10 {margin-top:10px;}
+.xans-product-detail .infoArea td input[type="text"],
+.xans-product-detail .infoArea td input[type="number"] {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--jj-line-dark);
+  box-sizing: border-box;
+  color: var(--jj-text);
+  background: #fff;
+  font-size: 13px;
+  outline: none;
+}
 
-/* 상세페이지 탭 */
-.xans-product-additional.section {margin:0 auto 120px auto;}
-.xans-product-additional .pdt150 {padding-top:150px;}
-.xans-product-additional .productDetail {margin:0;}
-.detail_tab {display:block; height:64px; margin:0 auto 40px; font-size:0;}
-.detail_tab li {display:inline-block; width:25%; vertical-align:top; border-top:1px solid #f0f0f0; border-bottom:1px solid #111; border-left:1px solid #f0f0f0; box-sizing:border-box;}
-.detail_tab li:last-child {border-right:1px solid #f0f0f0;}
-.detail_tab li a {display:block; height:60px; color:#9a9a9a; font-size:14px; line-height:60px; text-align:center;}
-.detail_tab li a span {position:relative;display:inline-block;color:#9a9a9a; font-size:14px; line-height:60px;}
-.detail_tab li.tab_open {border:1px solid #111; border-bottom:2px solid #fff;}
-.detail_tab li.tab_open a {color:#1a1a1a;}
+.xans-product-detail .xans-product-option .value {
+  margin: 8px 0 0;
+  color: var(--jj-muted);
+  font-size: 12px;
+}
 
-/* 상세페이지 모바일 탭 */
-.tabProduct {margin:30px -4.2% 20px -4.2%;position:sticky;top:60px;z-index:999;}
-.tabProduct ul {margin:0;display:flex;}
-.tabProduct li {border:0;flex:1;text-align:center;}
-.tabProduct li a {position:relative;display:block;color:#555;background-color:#fff; border:1px solid #e8e8e8;border-bottom:1px solid #1a1a1a; border-left:0; box-sizing:border-box;line-height:48px;}
-.tabProduct li.selected {border:0;}
-.tabProduct li.selected a {color:#1a1a1a;background-color:#fff;border:1px solid #1a1a1a; border-bottom:0;}
-.tabProduct li:first-child a {border-left:0;}
-.tabProduct li:last-child a {border-right:0;}
+.xans-product-detail .xans-product-option .ec-product-button li {
+  margin: 0 7px 7px 0;
+  border: 1px solid var(--jj-line-dark);
+  background: #fff;
+}
 
-/* 관련상품 */
-.relation {position:relative;}
-.relation .relation_title {padding:50px 0 0;font-size:24px;font-weight:700;line-height:1;color:#3a3a3a;text-align:center;}
-.relation .relation_title span {display:block;font-size:16px;font-weight:400;line-height:1;color:#9a9a9a;margin-top:15px;}
-.relation .swiper-button-prev,
-.relation .swiper-button-next {width:43px;height:43px;top:48%;position:absolute;z-index:2;cursor:pointer;}
-.relation .swiper-button-prev {background:url("/SkinImg/img/slide_ar_l.svg") no-repeat center; background-size:43px; left:-23px;}
-.relation .swiper-button-next {background:url("/SkinImg/img/slide_ar_r.svg") no-repeat center; background-size:43px; right:-23px;}
-.section_full .relation .swiper-button-prev {left:1%;}
-.section_full .relation .swiper-button-next {right:1%;}
-.swiper-container.relation_slide {padding:20px 0 10px 0;}
-.swiper-container.relation_slide .swiper-scrollbar {height:2px;left:0;width:100%;transition:all 0.3s;-webkit-transition:all 0.3s;-o-transition:all 0.3s;-moz-transition:all 0.3s;-ms-transition:all 0.3s;}
-.swiper-container.relation_slide .swiper-scrollbar:hover {height:5px;}
-.swiper-container.relation_slide .swiper-scrollbar .swiper-scrollbar-drag {background:#1a1a1a;cursor:pointer;border-radius:0;}
-.swiper-container.relation_slide ul {display:flex;padding:0;margin:0;height:auto;}
-.swiper-container.relation_slide ul .thumbnail {margin:0;}
-.swiper-container.relation_slide ul > li .prdList__item {margin:0;}
-.swiper-container.relation_slide ul > li .description .name a {font-size:16px;color:#3a3a3a;line-height:1.2;}
-.swiper-container.relation_slide ul > li .description .price {font-size:20px;margin-top:10px;color:#1a1a1a;font-weight:700;}
+.xans-product-detail .xans-product-option .ec-product-button li a {
+  min-width: 48px;
+  height: 36px;
+}
 
-/* 게시판 */
-.board_title {display:flex;justify-content:space-between;align-items:center;margin:0 0 40px 0;}
-.board_title h2 {font-size:20px;font-weight:700;}
-.board_title .ec-base-button {margin:0;}
-.board_title .ec-base-button a {width:110px;}
+.xans-product-detail .xans-product-option .ec-product-button li a span {
+  padding: 10px 12px;
+  color: var(--jj-text);
+  font-size: 12px;
+  line-height: 1.3;
+}
 
-/* 안내 */
-.detail_guide {display:flex;flex-wrap:wrap;}
-.detail_guide .ec-base-fold.theme1 {width:50%;}
-.detail_guide .ec-base-fold.theme1 .title {border:0;cursor:default;font-size:20px;}
-.detail_guide .ec-base-fold.theme1 .title:after {display:none;}
+.xans-product-detail .xans-product-option .ec-product-button .ec-product-selected {
+  border-color: var(--jj-text);
+  background: var(--jj-text);
+}
 
-/* 쿠폰 */
-.xans-coupon-productdetailajax.section {margin:0 auto 80px;}
-.xans-coupon-productdetailajax.section > .title h2 {font-size:14px;font-weight:400;line-height:60px;height:60px;text-align:center;color:#1a1a1a;border-bottom:1px solid #e0e0e0;}
-.xans-coupon-productdetailajax.section > .title .button {top:12px;}
-.xans-coupon-productdetailajax.section .couponSkinArea ul.grid3 {width:auto;}
-.xans-coupon-productdetailajax.section .couponSkinArea ul li {display:inline-block;float:none;}
-.display_tablet_only.titleArea {margin:0 auto;}
+.xans-product-detail .xans-product-option .ec-product-button .ec-product-selected a span {
+  color: #fff;
+}
 
-/* 이벤트 */
-.xans-product-detail .eventArea {margin-top:30px;color:#353535;line-height:1.4;}
-.xans-product-detail .eventArea img {width:100%;}
-.xans-product-detail .eventArea h3 {padding:50px 0 10px 0;border:0;font-size:24px;font-weight:700;line-height:1;color:#3a3a3a;text-align:center;}
-.xans-product-detail .eventArea .event {padding:0;color:#353535;line-height:1.4;}
+.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li {
+  overflow: hidden;
+  border-radius: 50%;
+}
 
-/* 간편결제 */
+.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li a {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+}
+
+.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- selected products / quantity ---------- */
+#totalProducts {
+  margin: 24px 0 0;
+  border-top: 1px solid var(--jj-line);
+}
+
+#totalProducts > table > tbody > tr > td {
+  padding: 20px 0;
+  border-color: var(--jj-line);
+}
+
+#totalProducts tbody td .product {
+  color: var(--jj-text);
+  font-size: 13px;
+}
+
+#totalProducts tbody td .product span {
+  color: var(--jj-muted);
+  font-size: 12px;
+}
+
+#totalProducts .quantity,
+#totalProducts table p:not(.product) {
+  height: 32px;
+}
+
+#totalProducts .quantity input,
+#totalProducts table p:not(.product) .quantity_opt {
+  border-color: var(--jj-line-dark);
+  background: #fff;
+}
+
+#totalProducts .quantity a,
+#totalProducts table p:not(.product) a {
+  border-color: var(--jj-line-dark);
+  background: #fff;
+}
+
+/* ---------- total price ---------- */
+#totalPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--jj-line);
+  border-bottom: 1px solid var(--jj-line);
+  background: #fff;
+  font-size: 13px;
+}
+
+#totalPrice .title {
+  color: var(--jj-muted);
+  font-weight: 400;
+}
+
+#totalPrice .total {
+  color: var(--jj-muted);
+}
+
+#totalPrice .total strong {
+  color: var(--jj-text);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- purchase buttons ---------- */
+.xans-product-action {
+  margin-top: 18px;
+}
+
+.xans-product-action .action_button {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.xans-product-action .action_button [class^="btn"] + [class^="btn"] {
+  margin-left: 0;
+}
+
+.xans-product-action .action_button .btnSubmit,
+.xans-product-action .action_button .btnNormal {
+  width: 100%;
+  height: 58px;
+  padding: 0 18px;
+  border-radius: 0;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: .04em;
+  text-align: center;
+}
+
+.xans-product-action .action_button .btnSubmit {
+  border: 1px solid var(--jj-text);
+  color: #fff;
+  background: var(--jj-text);
+}
+
+.xans-product-action .action_button .btnNormal {
+  border: 1px solid var(--jj-line-dark);
+  color: var(--jj-text);
+  background: #fff;
+}
+
+.xans-product-action .action_button .btnSubmit:hover {
+  background: #3a3734;
+}
+
+.xans-product-action .action_button .btnNormal:hover {
+  border-color: var(--jj-text);
+}
+
+.xans-product-action .action_button .sub_sold {
+  grid-column: 1 / -1;
+  height: 58px;
+  color: #fff;
+  background: var(--jj-muted-2);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 58px;
+  text-align: center;
+}
+
+.xans-product-action .action_button .actionWish {
+  margin-left: 0 !important;
+}
+
+/* ---------- quick payment ---------- */
 #NaverChk_Button,
-#appPaymentButtonBox {margin:10px 0 0;}
+#appPaymentButtonBox {
+  margin: 12px 0 0;
+}
 
-/* 회원등급 혜택 */
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage {padding:10px 0;border:1px solid #e0e0e0;}
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage .message {padding:0 0 5px;font-size:15px;font-weight:700;}
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage .information .thumbnail img {border-radius:50%;overflow:hidden;max-width:60px;}
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage .information .description {border:0;padding:0 10px 0 0;}
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage .member {color:#6a6a6a;}
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage em {font-style:normal;font-weight:700;color:#1a1a1a;}
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage .myshop_benefit_display_no_benefit {color:#6a6a6a;}
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage .myshop_benefit_display_no_benefit strong {font-weight:700;color:#1a1a1a;}
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage .myshop_benefit_display_with_all {color:#6a6a6a;}
-.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage .myshop_benefit_display_with_all strong {font-weight:700;color:#1a1a1a;}
+/* ---------- delivery / event / benefit ---------- */
+.xans-product-detail .eventArea {
+  margin-top: 28px;
+  color: var(--jj-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.xans-product-detail .eventArea h3 {
+  padding: 24px 0 10px;
+  border: 0;
+  color: var(--jj-text);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.xans-product-detail .eventArea .event {
+  padding: 0;
+  color: var(--jj-muted);
+  line-height: 1.7;
+}
+
+.xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid var(--jj-line);
+  background: var(--jj-soft);
+}
+
+/* ---------- product set ---------- */
+.xans-product-detail .productSet {
+  margin-top: 24px;
+  border-top: 1px solid var(--jj-line);
+}
+
+.xans-product-detail .productSet > .title {
+  padding: 18px 0 10px;
+}
+
+.xans-product-detail .productSet > .title h3 {
+  color: var(--jj-text);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.xans-product-detail .productSet .product > li {
+  border-color: var(--jj-line);
+}
+
+/* ---------- detail content ---------- */
+.xans-product-additional.section {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto 120px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.xans-product-additional .productDetail {
+  margin: 0;
+}
+
+.xans-product-additional .productDetail img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- desktop detail tab ---------- */
+.detail_tab {
+  display: none !important;
+  width: 100%;
+  margin: 72px 0 48px !important;
+  padding: 0 !important;
+}
+
+#detail + .detail_tab {
+  display: block !important;
+}
+
+.detail_tab .title_detail {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-top: 1px solid var(--jj-text);
+  border-bottom: 1px solid var(--jj-line);
+  list-style: none !important;
+}
+
+.detail_tab .title_detail::after {
+  display: none !important;
+}
+
+.detail_tab .title_detail li {
+  float: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-right: 1px solid var(--jj-line) !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+}
+
+.detail_tab .title_detail li:last-child {
+  border-right: 0 !important;
+}
+
+.detail_tab .title_detail li a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  min-height: 58px !important;
+  padding: 14px 10px !important;
+  color: var(--jj-muted) !important;
+  background: #fff;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  text-align: center;
+  text-decoration: none !important;
+  box-sizing: border-box;
+}
+
+.detail_tab .title_detail li a span {
+  margin-left: 5px !important;
+  color: inherit !important;
+  font-size: 11px !important;
+}
+
+.detail_tab .title_detail li.tab_open {
+  background: var(--jj-soft) !important;
+}
+
+.detail_tab .title_detail li.tab_open a,
+.detail_tab .title_detail li.tab_open a span {
+  color: var(--jj-text) !important;
+  font-weight: 500 !important;
+}
+
+.detail_tab .title_detail li:not(.tab_open):hover {
+  background: var(--jj-soft) !important;
+}
+
+.detail_tab .title_detail li:not(.tab_open):hover a {
+  color: var(--jj-text) !important;
+}
+
+/* current custom tab JS */
+#tabProduct {
+  display: none !important;
+}
+
+#prdDetail,
+#prdReview,
+#prdQnA,
+#prdInfo {
+  display: none !important;
+}
+
+#prdDetail.tab-content-open,
+#prdReview.tab-content-open,
+#prdQnA.tab-content-open,
+#prdInfo.tab-content-open {
+  display: block !important;
+}
+
+/* ---------- relation ---------- */
+.relation {
+  position: relative;
+  margin-top: 80px;
+}
+
+.relation .relation_title {
+  padding: 0 0 28px;
+  color: var(--jj-text);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: left;
+  letter-spacing: -0.02em;
+}
+
+.relation .relation_title span {
+  display: block;
+  margin-top: 8px;
+  color: var(--jj-muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.swiper-container.relation_slide {
+  padding: 0 0 14px;
+}
+
+.swiper-container.relation_slide ul > li .description .name a {
+  color: var(--jj-text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.swiper-container.relation_slide ul > li .description .price {
+  margin-top: 7px;
+  color: var(--jj-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.relation .swiper-button-prev,
+.relation .swiper-button-next {
+  width: 38px;
+  height: 38px;
+  opacity: .75;
+}
+
+/* ---------- boards ---------- */
+.board_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--jj-line);
+}
+
+.board_title h2 {
+  color: var(--jj-text);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.board_title .ec-base-button {
+  margin: 0;
+}
+
+.board_title .ec-base-button a {
+  width: auto;
+  min-width: 96px;
+  height: 38px;
+  padding: 0 14px;
+  border-color: var(--jj-line-dark);
+  color: var(--jj-text);
+  background: #fff;
+  font-size: 12px;
+  line-height: 36px;
+}
+
+/* ---------- guide ---------- */
+.detail_guide {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  border-top: 1px solid var(--jj-text);
+}
+
+.detail_guide .ec-base-fold.theme1 {
+  width: 50%;
+  border-bottom: 1px solid var(--jj-line);
+}
+
+.detail_guide .ec-base-fold.theme1 .title {
+  padding: 20px 0;
+  border: 0;
+  color: var(--jj-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ---------- coupon ---------- */
+.xans-coupon-productdetailajax.section {
+  margin: 0 auto 80px;
+}
+
+.xans-coupon-productdetailajax.section > .title h2 {
+  height: 54px;
+  border-bottom: 1px solid var(--jj-line);
+  color: var(--jj-text);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 54px;
+  text-align: left;
+}
+
+/* ---------- tablet ---------- */
+@media all and (max-width: 1180px) {
+  .xans-product-detail {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .xans-product-detail .detailArea {
+    gap: 44px;
+  }
+
+  .xans-product-detail .infoArea {
+    flex-basis: 390px;
+    width: 390px;
+  }
+}
+
+/* ---------- mobile / tablet ---------- */
+@media all and (max-width: 1024px) {
+  .xans-product-detail {
+    width: 100%;
+    margin-bottom: 64px;
+    padding: 0 16px;
+  }
+
+  .xans-product-detail .detailArea {
+    display: block;
+  }
+
+  .xans-product-detail .imgArea {
+    width: 100%;
+    margin: 0 0 34px;
+  }
+
+  .xans-product-detail .infoArea {
+    position: relative;
+    top: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .xans-product-detail .xans-product-mobileimage {
+    width: 100%;
+    margin: 0;
+  }
+
+  .xans-product-image .RTMB .prdImg {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: var(--jj-soft);
+  }
+
+  .xans-product-image .RTMB .prdImg .bigImage {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* keep thumbnails hidden on mobile as Cafe24 default behavior */
+  .xans-product-detail .imgArea .listImg {
+    display: none;
+  }
+
+  .xans-product-detail .headingArea {
+    padding-bottom: 20px;
+  }
+
+  .xans-product-detail .headingArea h1 {
+    font-size: 22px;
+  }
+
+  .xans-product-detail .infoArea table {
+    margin-top: 14px;
+  }
+
+  .xans-product-action .action_button {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .xans-product-action .action_button .btnSubmit,
+  .xans-product-action .action_button .btnNormal {
+    height: 54px;
+    line-height: 52px;
+  }
+
+  .xans-product-additional.section {
+    width: 100%;
+    margin-bottom: 70px;
+    padding: 0 16px;
+  }
+
+  .detail_tab {
+    margin: 50px 0 30px !important;
+  }
+
+  .detail_tab .title_detail {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .detail_tab .title_detail li {
+    border-bottom: 1px solid var(--jj-line) !important;
+  }
+
+  .detail_tab .title_detail li:nth-child(2n) {
+    border-right: 0 !important;
+  }
+
+  .detail_tab .title_detail li:nth-last-child(-n + 2) {
+    border-bottom: 0 !important;
+  }
+
+  .detail_tab .title_detail li a {
+    min-height: 52px !important;
+    padding: 12px 6px !important;
+    font-size: 12px !important;
+  }
+
+  .relation {
+    margin-top: 54px;
+  }
+
+  .relation .relation_title {
+    padding-bottom: 20px;
+    font-size: 17px;
+  }
+
+  .relation .swiper-button-prev,
+  .relation .swiper-button-next {
+    display: none;
+  }
+
+  .detail_guide .ec-base-fold.theme1 {
+    width: 100%;
+  }
+
+  .board_title {
+    margin-bottom: 18px;
+  }
+
+  .board_title h2 {
+    font-size: 16px;
+  }
+
+  #wrap {
+    overflow: visible !important;
+  }
+}
+
+/* ---------- small mobile ---------- */
+@media all and (max-width: 640px) {
+  .xans-product-detail {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .xans-product-detail .headingArea h1 {
+    font-size: 20px;
+  }
+
+  .xans-product-detail .infoArea th {
+    width: 92px;
+    font-size: 12px;
+  }
+
+  .xans-product-detail .infoArea td {
+    font-size: 12px;
+  }
+
+  #totalPrice .total strong {
+    font-size: 19px;
+  }
+
+  .xans-product-action .action_button {
+    gap: 8px;
+  }
+
+  .xans-product-action .action_button .btnSubmit,
+  .xans-product-action .action_button .btnNormal {
+    font-size: 12px;
+  }
+
+  .xans-product-additional.section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+/* =========================================================
+   JUN & JAY — REFERENCE MATCH OVERRIDE
+   Reference layout: warm white / blush pink / butter / sage / lavender
+   ========================================================= */
+
+:root {
+  --jj-ref-ink: #2f2b29;
+  --jj-ref-body: #655e59;
+  --jj-ref-muted: #99908a;
+  --jj-ref-line: #eee7e2;
+  --jj-ref-warm: #faf7f3;
+  --jj-ref-pink: #f6b7c2;
+  --jj-ref-pink-strong: #ef8fa3;
+  --jj-ref-pink-pale: #fff0f2;
+  --jj-ref-butter: #f7e7b8;
+  --jj-ref-sage: #dce8d5;
+  --jj-ref-lavender: #e8dded;
+}
+
+/* breadcrumb pill */
+body .section.path {
+  width: min(1240px, calc(100% - 48px)) !important;
+  max-width: 1240px !important;
+  min-height: 40px !important;
+  margin: 28px auto 30px !important;
+  padding: 0 22px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: #f8f4f0 !important;
+  box-sizing: border-box !important;
+}
+
+body .section.path > span {
+  display: none !important;
+}
+
+body .section.path ol {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 40px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body .section.path li {
+  float: none !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #8d827b !important;
+  font-size: 11px !important;
+}
+
+body .section.path li + li::before {
+  content: "›";
+  margin: 0 14px;
+  color: #c5bbb4;
+}
+
+body .section.path li a,
+body .section.path li strong {
+  color: inherit !important;
+  font-weight: 400 !important;
+}
+
+/* main product region */
+body .jj-reference-detail {
+  width: min(1240px, calc(100% - 48px)) !important;
+  max-width: 1240px !important;
+  margin: 0 auto 62px !important;
+  padding: 0 !important;
+  background: #fff !important;
+}
+
+body .jj-reference-detail .detailArea {
+  display: grid !important;
+  grid-template-columns: minmax(0, 570px) minmax(0, 1fr) !important;
+  gap: 48px !important;
+  align-items: start !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+body .jj-reference-detail .imgArea {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+/* reference-sized large photo */
+body .jj-reference-detail .xans-product-image .RW .prdImg,
+body .jj-reference-detail .xans-product-image .RW .thumbnail {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+body .jj-reference-detail .xans-product-image .RW .thumbnail {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  background: #f5f0eb !important;
+}
+
+body .jj-reference-detail .xans-product-image .RW .thumbnail > a {
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 3 / 4 !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+}
+
+body .jj-reference-detail .xans-product-image .RW .thumbnail > a > .BigImage {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+body .jj-reference-detail .xans-product-image .thumbnail .wish {
+  position: absolute !important;
+  top: 18px !important;
+  right: 18px !important;
+  left: auto !important;
+  z-index: 20 !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.96) !important;
+  box-shadow: 0 5px 18px rgba(79,62,54,.08) !important;
+}
+
+body .jj-reference-detail .xans-product-image .thumbnail .wish img {
+  position: static !important;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+/* thumbnails, same dimensions as reference */
+body .jj-reference-detail .imgArea .listImg {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 20px 0 0 !important;
+  padding: 0 38px !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+body .jj-reference-detail .imgArea .listImg .inner {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  height: auto !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 2px 0 4px !important;
+  scrollbar-width: none !important;
+}
+
+body .jj-reference-detail .imgArea .listImg .inner::-webkit-scrollbar {
+  display: none !important;
+}
+
+body .jj-reference-detail .imgArea .listImg ul {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body .jj-reference-detail .imgArea .listImg li {
+  display: block !important;
+  flex: 0 0 70px !important;
+  width: 70px !important;
+  height: 88px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid transparent !important;
+  border-radius: 9px !important;
+  background: #f7f2ed !important;
+  box-sizing: border-box !important;
+}
+
+body .jj-reference-detail .imgArea .listImg li img img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 8px !important;
+}
+
+body .jj-reference-detail .imgArea .listImg li.selected.selected {
+  border-color: #c99e90 !important;
+  outline: 0 !important;
+  box-shadow: 0 0 0 2px #f8e7e3 !important;
+}
+
+/* left benefit strip */
+body .jj-reference-detail .jj-left-benefits {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0 !important;
+  margin: 28px 0 0 !important;
+  padding: 11px 14px !important;
+  border: 1px solid #eee6e1 !important;
+  border-radius: 999px !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+}
+
+body .jj-reference-detail .jj-left-benefits span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+  padding: 0 8px !important;
+  color: #736b66 !important;
+  font-size: 10px !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+}
+
+body .jj-reference-detail .jj-left-benefits span + span {
+  border-left: 1px solid #eee6e1 !important;
+}
+
+body .jj-reference-detail .jj-mini-icon {
+  display: inline-grid !important;
+  place-items: center !important;
+  flex: 0 0 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 6px !important;
+  border-radius: 50% !important;
+  color: #af7d87 !important;
+  background: #fff0f2 !important;
+  font-size: 8px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+
+/* right panel — no enclosing card, like reference */
+body .jj-reference-detail .infoArea {
+  position: sticky !important;
+  top: 96px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 12px 0 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  box-sizing: border-box !important;
+}
+
+body .jj-reference-detail .headingArea {
+  position: relative !important;
+  margin: 0 0 22px !important;
+  padding: 36px 0 0 !important;
+  border: 0 !important;
+}
+
+body .jj-reference-detail .headingArea::before {
+  content: "NEW";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 4px;
+  color: #fff;
+  background: #f3a4b3;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+body .jj-reference-detail .headingArea .icon {
+  position: absolute !important;
+  top: 0 !important;
+  left: 44px !important;
+  margin: 0 !important;
+}
+
+body .jj-reference-detail .headingArea h1 {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--jj-ref-ink) !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -.035em !important;
+}
+
+body .jj-reference-detail .headingArea .delivery {
+  display: none !important;
+}
+
+body .jj-reference-detail .jj-short-description {
+  margin: 8px 0 0 !important;
+  color: #766d68 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+}
+
+body .jj-reference-detail .jj-price-line {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin: 14px 0 0 !important;
+  min-height: 35px !important;
+}
+
+body .jj-reference-detail .jj-price-sale,
+body .jj-reference-detail .jj-price-sale * {
+  color: var(--jj-ref-pink-strong) !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+}
+
+body .jj-reference-detail .jj-price-regular,
+body .jj-reference-detail .jj-price-regular * {
+  color: #aaa19c !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  text-decoration: line-through !important;
+}
+
+/* hide rows cloned into heading */
+body .jj-reference-detail .xans-product-detaildesign .jj-row-description,
+body .jj-reference-detail .xans-product-detaildesign .jj-row-sale-price,
+body .jj-reference-detail .xans-product-detaildesign .jj-row-regular-price {
+  display: none !important;
+}
+
+/* product info bordered card */
+body .jj-reference-detail .xans-product-detaildesign {
+  margin: 24px 0 28px !important;
+  padding: 14px 20px !important;
+  border: 1px solid #f0ddd8 !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+}
+
+body .jj-reference-detail .xans-product-detaildesign table {
+  width: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+body .jj-reference-detail .xans-product-detaildesign th {
+  width: 112px !important;
+  padding: 8px 0 !important;
+  color: #4c4541 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  vertical-align: middle !important;
+}
+
+body .jj-reference-detail .xans-product-detaildesign td {
+  padding: 8px 0 !important;
+  color: #625b56 !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  vertical-align: middle !important;
+}
+
+/* options spacing */
+body .jj-reference-detail .infoArea > table,
+body .jj-reference-detail .infoArea > .regularDelivery,
+body .jj-reference-detail .infoArea > dl.quantity {
+  margin-top: 20px !important;
+}
+
+body .jj-reference-detail .infoArea table.xans-product-option,
+body .jj-reference-detail .infoArea .xans-product-option {
+  margin: 0 !important;
+  padding: 19px 0 0 !important;
+  border-top: 0 !important;
+}
+
+body .jj-reference-detail .xans-product-option th {
+  width: 94px !important;
+  padding: 9px 0 !important;
+  color: #514a46 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  vertical-align: middle !important;
+}
+
+body .jj-reference-detail .xans-product-option td {
+  padding: 9px 0 !important;
+}
+
+body .jj-reference-detail .infoArea select {
+  width: 100% !important;
+  height: 44px !important;
+  margin: 0 !important;
+  padding: 0 38px 0 13px !important;
+  border: 1px solid #eae3df !important;
+  border-radius: 8px !important;
+  color: #5f5752 !important;
+  background-color: #fff !important;
+  font-size: 12px !important;
+}
+
+body .jj-reference-detail .xans-product-option .ec-product-button li {
+  margin: 0 7px 0 0 !important;
+  border: 1px solid #ece5e0 !important;
+  border-radius: 7px !important;
+  background: #fff !important;
+}
+
+body .jj-reference-detail .xans-product-option .ec-product-button li a {
+  min-width: 58px !important;
+  height: 41px !important;
+}
+
+body .jj-reference-detail .xans-product-option .ec-product-button li a span {
+  padding: 11px 10px !important;
+  color: #625a55 !important;
+  font-size: 11px !important;
+  line-height: 18px !important;
+}
+
+body .jj-reference-detail .xans-product-option .ec-product-button .ec-product-selected {
+  border-color: #f0a9b7 !important;
+  background: #fff8f9 !important;
+}
+
+body .jj-reference-detail .xans-product-option .ec-product-button.ec-product-preview li {
+  width: 36px !important;
+  min-width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+}
+
+body .jj-reference-detail .xans-product-option .ec-product-button.ec-product-preview li a {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+}
+
+/* quantity control */
+body .jj-reference-detail .ec-base-qty {
+  display: inline-flex !important;
+  position: relative !important;
+  align-items: center !important;
+  width: 118px !important;
+  height: 42px !important;
+  padding: 0 40px !important;
+  border: 1px solid #eae3df !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+}
+
+body .jj-reference-detail .ec-base-qty input {
+  width: 36px !important;
+  height: 40px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  text-align: center !important;
+}
+
+body .jj-reference-detail .ec-base-qty .up,
+body .jj-reference-detail .ec-base-qty .down {
+  position: absolute !important;
+  top: 0 !important;
+  display: block !important;
+  width: 40px !important;
+  height: 40px !important;
+  border: 0 !important;
+}
+
+body .jj-reference-detail .ec-base-qty .down { left: 0 !important; }
+body .jj-reference-detail .ec-base-qty .up { right: 0 !important; }
+
+body .jj-reference-detail .ec-base-qty .down::after {
+  content: "−";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #78706b;
+  font-size: 16px;
+}
+
+body .jj-reference-detail .ec-base-qty .up::after {
+  content: "+";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #78706b;
+  font-size: 16px;
+}
+
+body .jj-reference-detail .ec-base-qty a img {
+  opacity: 0 !important;
+}
+
+/* total / buy area visually one box */
+body .jj-reference-detail .totalPrice {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin: 28px 0 0 !important;
+  padding: 18px 18px 10px !important;
+  border: 1px solid #f0ddd8 !important;
+  border-bottom: 0 !important;
+  border-radius: 14px 14px 0 0 !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+}
+
+body .jj-reference-detail .totalPrice .title {
+  color: #a29892 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+body .jj-reference-detail .totalPrice .qty {
+  display: none !important;
+}
+
+body .jj-reference-detail .totalPrice > span,
+body .jj-reference-detail .totalPrice > span strong,
+body .jj-reference-detail .totalPrice > span em {
+  color: var(--jj-ref-pink-strong) !important;
+  font-size: 23px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+
+body .jj-reference-detail .totalPrice + .ec-base-help {
+  margin: 0 !important;
+  padding: 0 18px 8px !important;
+  border-left: 1px solid #f0ddd8 !important;
+  border-right: 1px solid #f0ddd8 !important;
+  color: #b0a8a3 !important;
+  background: #fff !important;
+  font-size: 10px !important;
+  box-sizing: border-box !important;
+}
+
+/* action */
+body .jj-reference-detail .productAction {
+  margin: 0 !important;
+  padding: 0 14px 16px !important;
+  border: 1px solid #f0ddd8 !important;
+  border-top: 0 !important;
+  border-radius: 0 0 14px 14px !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+}
+
+body .jj-reference-detail .productAction .action_button {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  margin: 0 !important;
+}
+
+body .jj-reference-detail .productAction .action_button > .btnSubmit,
+body .jj-reference-detail .productAction .action_button > .actionCart {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 58px !important;
+  margin: 0 !important;
+  padding: 0 12px !important;
+  border-radius: 9px !important;
+  box-sizing: border-box !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+}
+
+body .jj-reference-detail .productAction .action_button > .actionCart {
+  order: 1 !important;
+  border: 1px solid #f1aaba !important;
+  color: #e27d92 !important;
+  background: #fff !important;
+}
+
+body .jj-reference-detail .productAction .action_button > .actionCart::before {
+  content: "▢";
+  margin-right: 8px;
+  color: #ef9daf;
+  font-size: 18px;
+}
+
+body .jj-reference-detail .productAction .action_button > .btnSubmit {
+  order: 2 !important;
+  border: 1px solid #ef8fa3 !important;
+  color: #fff !important;
+  background: linear-gradient(135deg, #f5a9b9, #ef8fa3) !important;
+  box-shadow: none !important;
+}
+
+body .jj-reference-detail .productAction .action_button > .btnSubmit::before {
+  content: "♡";
+  margin-right: 7px;
+  color: #fff;
+  font-size: 20px;
+}
+
+body .jj-reference-detail .productAction .action_button > .actionWish {
+  display: none !important;
+}
+
+body .jj-reference-detail .productAction > .mrt10 {
+  display: none !important;
+}
+
+body .jj-reference-detail #NaverChk_Button,
+body .jj-reference-detail [id$="appPaymentButtonBox"] {
+  margin: 10px 0 0 !important;
+}
+
+/* 4 pastel round service icons */
+body .jj-reference-detail .jj-service-menu {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 18px !important;
+  margin: 34px -4px 0 !important;
+  padding: 0 !important;
+}
+
+body .jj-reference-detail .jj-service {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  color: #4c4642 !important;
+  text-decoration: none !important;
+}
+
+body .jj-reference-detail .jj-service-circle {
+  display: grid !important;
+  place-items: center !important;
+  width: 58px !important;
+  height: 58px !important;
+  margin-bottom: 10px !important;
+  border-radius: 50% !important;
+}
+
+body .jj-reference-detail .jj-service-circle svg {
+  width: 25px !important;
+  height: 25px !important;
+  fill: none !important;
+  stroke: #625b56 !important;
+  stroke-width: 1.4 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+body .jj-reference-detail .jj-service-gift .jj-service-circle { background: #fae8b6 !important; }
+body .jj-reference-detail .jj-service-delivery .jj-service-circle { background: #dce9d5 !important; }
+body .jj-reference-detail .jj-service-return .jj-service-circle { background: #e7dced !important; }
+body .jj-reference-detail .jj-service-qna .jj-service-circle { background: #f7dce4 !important; }
+
+body .jj-reference-detail .jj-service strong {
+  color: #514b47 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+}
+
+/* member benefits are compact */
+body .jj-reference-detail .xans-myshop-asyncbenefit.ec-base-box.typeMember.gMessage {
+  margin: 24px 0 0 !important;
+  padding: 12px 14px !important;
+  border: 1px solid #eee8e3 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  font-size: 11px !important;
+}
+
+/* hide event inside sticky info if empty/visual noise */
+body .jj-reference-detail .productAction .eventArea:empty {
+  display: none !important;
+}
+
+/* additional content width */
+body .xans-product-additional.section {
+  width: min(1080px, calc(100% - 48px)) !important;
+  max-width: 1080px !important;
+  margin: 0 auto 100px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* top tabs exactly as reference */
+body .xans-product-additional .detail_tab {
+  display: none !important;
+  width: 100% !important;
+  margin: 0 0 -1px !important;
+  padding: 0 !important;
+}
+
+body .xans-product-additional #detail + .detail_tab {
+  display: block !important;
+}
+
+body .xans-product-additional .detail_tab .title_detail {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 14px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 42px !important;
+  border: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body .xans-product-additional .detail_tab .title_detail li {
+  float: none !important;
+  width: auto !important;
+  height: 62px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 14px 14px 0 0 !important;
+  background: #f4f0ed !important;
+  box-sizing: border-box !important;
+}
+
+body .xans-product-additional .detail_tab .title_detail li:first-child {
+  background: #f8ccd2 !important;
+}
+
+body .xans-product-additional .detail_tab .title_detail li a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 62px !important;
+  min-height: 62px !important;
+  padding: 0 10px !important;
+  color: #69615c !important;
+  background: transparent !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+}
+
+body .xans-product-additional .detail_tab .title_detail li.tab_open a,
+body .xans-product-additional .detail_tab .title_detail li.tab_open a span {
+  color: #fff !important;
+}
+
+body .xans-product-additional .detail_tab .title_detail li a span {
+  margin-left: 4px !important;
+  color: inherit !important;
+  font-size: 11px !important;
+}
+
+/* product detail floral card */
+body .xans-product-additional #prdDetail {
+  overflow: visible !important;
+}
+
+body .xans-product-additional .jj-product-detail-intro {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 225px !important;
+  padding: 38px 150px !important;
+  overflow: hidden !important;
+  border-radius: 26px 26px 0 0 !important;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(248,213,217,.25), transparent 180px),
+    radial-gradient(circle at 88% 20%, rgba(236,225,217,.32), transparent 200px),
+    #fbf7f3 !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+}
+
+body .xans-product-additional .jj-detail-heading {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body .xans-product-additional .jj-tiny-flower {
+  display: block !important;
+  width: 42px !important;
+  height: 34px !important;
+  margin: 0 auto 11px !important;
+  overflow: hidden !important;
+}
+
+body .xans-product-additional .jj-tiny-flower .jj-flower-svg {
+  width: 32px !important;
+  height: 57px !important;
+  transform: translateY(-1px) scale(.65) !important;
+  transform-origin: top center !important;
+}
+
+body .xans-product-additional .jj-product-detail-intro h3 {
+  margin: 0 !important;
+  color: #76665e !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 27px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  letter-spacing: .19em !important;
+}
+
+body .xans-product-additional .jj-product-detail-intro p {
+  margin: 16px 0 0 !important;
+  color: #5e5753 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+}
+
+body .xans-product-additional .jj-flower {
+  position: absolute !important;
+  bottom: 20px !important;
+  width: 70px !important;
+  height: 125px !important;
+}
+
+body .xans-product-additional .jj-flower-left {
+  left: 54px !important;
+}
+
+body .xans-product-additional .jj-flower-right {
+  right: 54px !important;
+  transform: scaleX(-1) !important;
+}
+
+body .xans-product-additional .jj-flower-svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body .xans-product-additional .jj-flower-svg .stem {
+  fill: none !important;
+  stroke: #7f9878 !important;
+  stroke-width: 1.7 !important;
+  stroke-linecap: round !important;
+}
+
+body .xans-product-additional .jj-flower-svg .leaf {
+  fill: #dce6d7 !important;
+  stroke: #8ba084 !important;
+  stroke-width: 1 !important;
+}
+
+body .xans-product-additional .jj-flower-svg .petal {
+  fill: #f3b6b8 !important;
+  stroke: #d99b9b !important;
+  stroke-width: .8 !important;
+}
+
+body .xans-product-additional .jj-flower-svg .p2 { fill: #f8d2c7 !important; }
+body .xans-product-additional .jj-flower-svg .p3 { fill: #efc3c4 !important; }
+body .xans-product-additional .jj-flower-svg .flower-core { fill: #d7a571 !important; }
+
+/* actual product detail begins immediately under intro */
+body .xans-product-additional .jj-real-product-detail {
+  overflow: hidden !important;
+  padding: 0 0 0 !important;
+  border-radius: 0 0 24px 24px !important;
+  background: #fff !important;
+}
+
+body .xans-product-additional .jj-real-product-detail img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* related + boards remain clean below */
+body .xans-product-additional .relation {
+  margin-top: 70px !important;
+}
+
+#zoomMouseGiude,
+#zoomGuideImage,
+#image_zoom_small,
+#zoom_wrap {
+  display: none !important;
+}
+
+/* mobile */
+@media all and (max-width: 1024px) {
+  body .section.path {
+    width: calc(100% - 28px) !important;
+    margin: 18px auto 18px !important;
+  }
+
+  body .jj-reference-detail {
+    width: 100% !important;
+    margin-bottom: 46px !important;
+    padding: 0 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  body .jj-reference-detail .detailArea {
+    display: block !important;
+  }
+
+  body .jj-reference-detail .infoArea {
+    position: relative !important;
+    top: auto !important;
+    margin-top: 28px !important;
+  }
+
+  body .jj-reference-detail .xans-product-image .RW {
+    display: none !important;
+  }
+
+  body .jj-reference-detail .xans-product-image .RTMB {
+    display: block !important;
+  }
+
+  body .jj-reference-detail .xans-product-image .RTMB .prdImg,
+  body .jj-reference-detail .xans-product-image .RTMB .thumbnail {
+    overflow: hidden !important;
+    border-radius: 18px !important;
+  }
+
+  body .jj-reference-detail .xans-product-image .RTMB img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 18px !important;
+  }
+
+  body .jj-reference-detail .jj-left-benefits {
+    display: none !important;
+  }
+
+  body .jj-reference-detail .jj-service-menu {
+    gap: 8px !important;
+    margin-top: 28px !important;
+  }
+
+  body .jj-reference-detail .jj-service-circle {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  body .xans-product-additional.section {
+    width: 100% !important;
+    padding: 0 14px !important;
+  }
+
+  body .xans-product-additional .detail_tab .title_detail {
+    gap: 7px !important;
+    padding: 0 !important;
+  }
+
+  body .xans-product-additional .detail_tab .title_detail li,
+  body .xans-product-additional .detail_tab .title_detail li a {
+    height: 52px !important;
+    min-height: 52px !important;
+    font-size: 11px !important;
+  }
+
+  body .xans-product-additional .jj-product-detail-intro {
+    min-height: 190px !important;
+    padding: 32px 70px !important;
+    border-radius: 18px 18px 0 0 !important;
+  }
+
+  body .xans-product-additional .jj-product-detail-intro h3 {
+    font-size: 21px !important;
+  }
+
+  body .xans-product-additional .jj-flower {
+    width: 50px !important;
+    height: 92px !important;
+  }
+
+  body .xans-product-additional .jj-flower-left { left: 14px !important; }
+  body .xans-product-additional .jj-flower-right { right: 14px !important; }
+}
+
+@media all and (max-width: 640px) {
+  body .jj-reference-detail .headingArea h1 {
+    font-size: 22px !important;
+  }
+
+  body .jj-reference-detail .jj-price-sale,
+  body .jj-reference-detail .jj-price-sale * {
+    font-size: 22px !important;
+  }
+
+  body .jj-reference-detail .productAction .action_button {
+    gap: 8px !important;
+  }
+
+  body .jj-reference-detail .productAction .action_button > .btnSubmit,
+  body .jj-reference-detail .productAction .action_button > .actionCart {
+    height: 54px !important;
+    font-size: 12px !important;
+  }
+
+  body .jj-reference-detail .jj-service strong {
+    font-size: 10px !important;
+  }
+
+  body .xans-product-additional .detail_tab .title_detail {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  body .xans-product-additional .detail_tab .title_detail li {
+    border-radius: 10px !important;
+  }
+
+  body .xans-product-additional .jj-product-detail-intro {
+    min-height: 175px !important;
+    padding: 28px 48px !important;
+  }
+
+  body .xans-product-additional .jj-flower {
+    opacity: .7 !important;
+  }
+}
+/* =========================
+   JUN & JAY PRICE
+   reference style
+   ========================= */
+
+body .jj-reference-detail .jj-cafe24-price {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+
+  gap: 8px !important;
+
+  margin: 14px 0 0 !important;
+  padding: 0 !important;
+
+  min-height: auto !important;
+
+  line-height: 1 !important;
+}
 
 
-@media all and (max-width:1024px) {
-	/* 상세페이지 */
-	.xans-product-detail {margin-bottom:50px;}
-	.xans-product-detail .imgArea {width:100%;}
-	.xans-product-detail .xans-product-option tr,
-	.xans-product-detail .xans-product-option td {display:block;}
-	.xans-product-detail .xans-product-mobileimage {width:108%;margin-left:-4%;}
-	.xans-product-detail .infoArea {width:100%;margin:0;position:relative;}
-	#totalProducts tbody td {padding:15px 0;}
-	#totalProducts .delete {margin-top:0;}
-	#totalProducts .eAddProductQuantityUpClass {position:absolute;top:0;right:0;}
-	#totalProducts .eAddProductQuantityDownClass {position:absolute;top:0;left:0;}
-	#totalProducts .eAddProductQuantityUpClass:after {content: '';position: absolute;left: 50%;top: 50%;width: 1px;height: 9px;margin: -4px 0 0 0;background: #000;}
-	#totalProducts tr.option_product > td > table,
-	#totalProducts tr.add_product > td > table {margin:-15px 0;}
-	#totalProducts tr.option_product > td > table > colgroup > col:first-child {width:auto !important;}
-	.xans-product-detail .infoArea td input[type=text] {width:100%;}
-	.xans-product-detail .xans-product-addoption .txtByte {margin:10px 0 0 0;display:block;}
-	#totalProducts table p input[type=number] {width:45px;height:30px;padding:0;line-height:28px;margin-left:-1px;border:1px solid #e5e5e5;text-align:center;}
+/* 판매가
+   ex) 62,000원 */
+body .jj-reference-detail .jj-cafe24-selling-price {
+  display: inline-flex !important;
+  align-items: center !important;
 
-	/* 세일박스 */
-	.xans-product-detail .infoArea table .sale_box {width:45px;height:45px;font-size:15px;font-weight:400;}
+  margin: 0 !important;
+  padding: 0 !important;
 
-	/* 구매버튼 */
-	.xans-product-additional.section {width:100%;max-width:100%;margin-bottom:50px;}
-	.xans-product-additional .pdt150 {padding-top:0;}
-	.xans-product-additional .productDetail {margin:0 0 40px;}
-	.xans-product-action .action_button {flex-wrap: wrap;}
-	.xans-product-action .action_button .btnNormal {flex:1;height:66px;padding:23px 0;}
-	.xans-product-action .action_button .btnSubmit {flex:none;width:100%;margin-bottom:12px;}
-	.xans-product-action .action_button [class^='btn'] + [class^='btn'] {margin-left:0;}
-	.xans-product-action .action_button .actionWish {margin-left:12px !important;}
-	.xans-product-action.ec-base-button.gFixed [class^='btn'].sizeM {font-weight:400;}
-	.xans-product-action .soldout {margin:0;}
+  color: #f38fa2 !important;
 
-	/* 관련상품 */
-	.relation .relation_title {padding:30px 0 0 0;font-size:16px;}
-	.relation .relation_title span {font-size:11px;}
-	.swiper-container.relation_slide ul > li .description {border:0;padding:0;min-height:auto;}
-	.swiper-container.relation_slide ul > li .description .name a {font-size:13px;}
-	.swiper-container.relation_slide ul > li .description .price {font-size:13px;}
-	.relation .swiper-button-prev,
-	.relation .swiper-button-next {display:none;}
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.03em !important;
 
-	/* 안내 */
-	.detail_guide .ec-base-fold.theme1 {width:100%;}
-	.detail_guide .ec-base-fold.theme1 .title {border-top:1px solid #1a1a1a;}
-	.detail_guide .ec-base-fold.theme1 .title:after {display:inline-block;}
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
 
-	/* 상세페이지 탭 */
-	.detail_tab {display:none;}
-	#prdInfo,
-	#prdQnA,
-	#prdReview {display:none;}
 
-	/* 게시판 */
-	.board_title {margin:0 0 20px 0;}
-	.board_title .ec-base-button a {width:80px;}
-	.xans-product-additional .typeList .boardComment li {padding:25px 25px 25px 36px;}
-	.xans-product-additional .view .ec-base-button a {margin-top:8px;flex:1;}
-	.xans-product-additional .view .ec-base-button .gLeft,
-	.xans-product-additional .view .ec-base-button .gRight {float:none;display:flex;}
+/* 카페24가 내부에 span / strong 등을 넣어도 동일하게 */
+body .jj-reference-detail .jj-cafe24-selling-price * {
+  color: #f38fa2 !important;
 
-	/* 쿠폰 */
-	.xans-coupon-productdetailajax.section {margin-bottom:50px;}
-	.xans-coupon-productdetailajax.section > .title h2 {font-size:13px;line-height:50px;height:50px;text-align:left;}
-	.xans-coupon-productdetailajax.section > .title .button {top:9px;}
-	.xans-coupon-productdetailajax.section .couponSkinArea ul li {display:block;}
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
 
-	/* 이벤트 */
-	.xans-product-detail .eventArea h3 {padding:0 0 10px;border:0;font-size:16px;}
+  text-decoration: none !important;
+}
 
-	/* 적립금 자세히보기 */
-	.xans-product-detail .mileage_tooltip {display:inline-block;}
-	.xans-product-detail .mileage_tooltip .button {border: 1px solid #111;color: #111;font-size: 11px;display: inline-block;padding: 3px 8px;margin-left:5px;}
-	.xans-product-detail .mileage_layer table th {width:auto;padding:7px 5px 6px;}
-	.xans-product-detail .mileage_layer .content p {margin-bottom:5px;}
 
-	/* 상세페이지에서 탭고정 위해 사용 */
-	#wrap {overflow:visible !important;}
+/* 소비자가
+   ex) 78,000원 */
+body .jj-reference-detail .jj-cafe24-consumer-price {
+  display: inline-block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #b7b7b7 !important;
+
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+
+  text-decoration-line: line-through !important;
+  text-decoration-color: #b7b7b7 !important;
+  text-decoration-thickness: 1px !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* 소비자가 내부 태그에도 취소선 유지 */
+body .jj-reference-detail .jj-cafe24-consumer-price * {
+  color: #b7b7b7 !important;
+
+  font-size: inherit !important;
+  font-weight: 400 !important;
+  line-height: inherit !important;
+
+  text-decoration-line: line-through !important;
+  text-decoration-color: #b7b7b7 !important;
+  text-decoration-thickness: 1px !important;
+}
+
+
+/* 기존 카페24 자동 할인율은 숨김 */
+body .jj-reference-detail .ec-sale-rate {
+  display: none !important;
+}
+
+
+/* 할인율
+   ex) 21% */
+body .jj-reference-detail .jj-sale-rate {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-width: 36px !important;
+  height: 21px !important;
+
+  margin: 0 0 0 2px !important;
+  padding: 0 6px !important;
+
+  border: 1px solid #f5a6b4 !important;
+  border-radius: 5px !important;
+
+  color: #f38fa2 !important;
+  background: #ffffff !important;
+
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 19px !important;
+  letter-spacing: -0.02em !important;
+
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* 할인율이 판매가 span 안에 들어가 있으므로
+   판매가 글씨 크기 상속되는 것 방지 */
+body .jj-reference-detail
+.jj-cafe24-selling-price
+.jj-sale-rate {
+  color: #f38fa2 !important;
+
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 19px !important;
+
+  text-decoration: none !important;
+}
+
+
+/* 모바일도 거의 동일한 비율 */
+@media all and (max-width: 640px) {
+
+  body .jj-reference-detail .jj-cafe24-price {
+    gap: 7px !important;
+    margin-top: 12px !important;
+  }
+
+  body .jj-reference-detail .jj-cafe24-selling-price {
+    font-size: 18px !important;
+  }
+
+  body .jj-reference-detail .jj-cafe24-consumer-price {
+    font-size: 12px !important;
+  }
+
+  body .jj-reference-detail .jj-sale-rate,
+  body .jj-reference-detail
+  .jj-cafe24-selling-price
+  .jj-sale-rate {
+
+    min-width: 36px !important;
+    height: 21px !important;
+
+    padding: 0 6px !important;
+
+    border-radius: 5px !important;
+
+    font-size: 11px !important;
+    line-height: 19px !important;
+  }
+}
+
+/* =========================================================
+   JUN & JAY - NATIVE THUMBNAILS ONLY
+   대표이미지 강제 추가 없음 / Cafe24 기본 썸네일만 사용
+   ========================================================= */
+
+body .jj-reference-detail .imgArea .listImg {
+  width: 100% !important;
+  height: auto !important;
+  margin: 20px 0 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+body .jj-reference-detail .imgArea .listImg .inner {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 3px 2px 5px !important;
+  scrollbar-width: none !important;
+}
+
+body .jj-reference-detail .imgArea .listImg .inner::-webkit-scrollbar {
+  display: none !important;
+}
+
+body .jj-reference-detail .imgArea .listImg ul.list {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: max-content !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body .jj-reference-detail .imgArea .listImg ul.list li {
+  position: relative !important;
+  display: block !important;
+  flex: 0 0 70px !important;
+  width: 70px !important;
+  height: 88px !important;
+  margin: 0 !important;
+  padding: 3px !important;
+  overflow: hidden !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    background-color .2s ease !important;
+}
+
+body .jj-reference-detail .imgArea .listImg ul.list li img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 7px !important;
+  transform: scale(1) !important;
+  transition: transform .25s ease !important;
+  cursor: pointer !important;
+}
+
+body .jj-reference-detail .imgArea .listImg ul.list li:hover {
+  border-color: #e3beb5 !important;
+}
+
+body .jj-reference-detail .imgArea .listImg ul.list li:hover img {
+  transform: scale(1.03) !important;
+}
+
+body .jj-reference-detail .imgArea .listImg ul.list li.selected {
+  border-color: #c99082 !important;
+  background: #fffafa !important;
+  box-shadow: 0 0 0 1px rgba(201,144,130,.12) !important;
+}
+
+body .jj-reference-detail .imgArea .listImg ul.list li.selected img,
+body .jj-reference-detail .imgArea .listImg ul.list li.selected:hover img {
+  transform: scale(1.06) !important;
+}
+
+body .jj-reference-detail .imgArea .listImg button.prev,
+body .jj-reference-detail .imgArea .listImg button.next {
+  display: none !important;
+}
+/* =========================================
+   MAIN IMAGE - WISH HOVER
+   ========================================= */
+
+/* 대표 이미지 영역 */
+body .jj-reference-detail .imgArea .prdImg .thumbnail {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* 이미지 어두워지는 효과 */
+body .jj-reference-detail .imgArea .prdImg .thumbnail::after {
+  content: "" !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
+
+  background: rgba(65, 48, 43, 0.16) !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+
+  pointer-events: none !important;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease !important;
+}
+
+/* 이미지도 아주 살짝 확대 */
+body .jj-reference-detail .imgArea .prdImg .BigImage {
+  transition:
+    transform 0.4s ease,
+    filter 0.3s ease !important;
+}
+
+body .jj-reference-detail .imgArea .prdImg .thumbnail:hover::after {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body .jj-reference-detail .imgArea .prdImg .thumbnail:hover .BigImage {
+  transform: scale(1.015) !important;
+}
+
+
+/* =========================================
+   기존 카페24 WISH 영역
+   ========================================= */
+
+body .jj-reference-detail .imgArea .prdImg .thumbnail .wish {
+  position: absolute !important;
+
+  top: 50% !important;
+  left: 50% !important;
+  z-index: 20 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 108px !important;
+  height: 42px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: translate(-50%, -42%) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: 999px !important;
+
+  background: rgba(255, 255, 255, 0.9) !important;
+
+  box-shadow: 0 7px 24px rgba(65, 48, 43, 0.12) !important;
+
+  backdrop-filter: blur(7px) !important;
+  -webkit-backdrop-filter: blur(7px) !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+
+  cursor: pointer !important;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease !important;
+}
+
+
+/* WISH 글씨
+   카페24 내부 구조와 상관없이 .wish 자체에 생성 */
+body .jj-reference-detail .imgArea .prdImg .thumbnail .wish::after {
+  content: "WISH" !important;
+
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+
+  z-index: 2 !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  display: block !important;
+
+  color: #a87569 !important;
+
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+
+  letter-spacing: 0.16em !important;
+
+  white-space: nowrap !important;
+
+  pointer-events: none !important;
+}
+
+
+/* 기존 하트 이미지는 투명하게
+   클릭 기능 자체는 그대로 유지 */
+body .jj-reference-detail .imgArea .prdImg .thumbnail .wish img {
+  position: absolute !important;
+  inset: 0 !important;
+
+  z-index: 5 !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  opacity: 0 !important;
+
+  cursor: pointer !important;
+}
+
+
+/* 내부 a/span이 있다면 클릭 영역 전체 사용 */
+body .jj-reference-detail .imgArea .prdImg .thumbnail .wish a,
+body .jj-reference-detail .imgArea .prdImg .thumbnail .wish > span {
+  position: absolute !important;
+  inset: 0 !important;
+
+  z-index: 6 !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  cursor: pointer !important;
+}
+
+
+/* 대표 이미지 hover → WISH 등장 */
+body .jj-reference-detail .imgArea .prdImg .thumbnail:hover .wish {
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transform: translate(-50%, -50%) !important;
+}
+
+
+/* WISH 버튼 hover */
+body .jj-reference-detail .imgArea .prdImg .thumbnail .wish:hover {
+  border-color: #d9aaa0 !important;
+
+  background: rgba(255, 250, 249, 0.97) !important;
+
+  box-shadow: 0 9px 28px rgba(150, 105, 95, 0.18) !important;
+}
+
+
+/* 버튼 hover 글씨 */
+body .jj-reference-detail .imgArea .prdImg .thumbnail .wish:hover::after {
+  color: #98685e !important;
+}
+
+
+/* 모바일에서는 기존 동작 방해하지 않게 숨김 */
+@media all and (max-width: 1024px) {
+  body .jj-reference-detail .imgArea .prdImg .thumbnail .wish {
+    display: none !important;
+  }
+
+  body .jj-reference-detail .imgArea .prdImg .thumbnail::after {
+    display: none !important;
+  }
 }

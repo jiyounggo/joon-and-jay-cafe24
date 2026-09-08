@@ -1,86 +1,1947 @@
-<div class="main_top_banner ez-align-left" data-ez-module="top-banner" data-ez-align="left" data-ez-role="style.color" data-ez-display="visible" data-ez="contents-12vz33y-1">
-	<div class="top_banner_box_inner">
-		<div class="top_banner_text"><!-- 최상단 배너 수정하는곳 -->
-			<a data-ez-role="a" href="#" data-href="#" target="_self" style="color: black;">첫 쇼핑을 지원하는 3,000원 할인 회원가입 쿠폰</a>
-		</div><!-- //top_banner_text -->
+<!-- =========================================
+     JUN & JAY CUSTOM OPEN EVENT BANNER
+========================================== -->
 
-		<div class="top_banner_close" data-ez-role="close">
-			<input type="checkbox" name="chkbox" id="top_banner_box_cloase" value="1" data-ez-role="disable-term"><label for="top_banner_box_cloase" data-ez-role="disable-text">오늘 하루 보지 않기</label>
-			<i aria-hidden="true" class="icon icoClose">닫기</i>
-		</div><!-- //top_banner_close -->
-	</div><!-- //top_banner_box_inner -->
+<style>
+  .jj-custom-event-banner {
+    position: relative;
+    z-index: 100000;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4eadc;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+  }
+
+  .jj-custom-event-banner__message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #111;
+    font-family: "Montserrat", "Noto Sans KR", Arial, sans-serif;
+    white-space: nowrap;
+  }
+
+  .jj-custom-event-banner__sparkle {
+    display: inline-block;
+    color: #ad9270;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .jj-custom-event-banner__label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .jj-custom-event-banner__divider {
+    display: block;
+    width: 1px;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .jj-custom-event-banner__text {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  .jj-custom-event-banner__controls {
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .jj-custom-event-banner__today {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #645b52;
+    font-family: "Montserrat", "Noto Sans KR", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .jj-custom-event-banner__checkbox {
+    width: 11px;
+    height: 11px;
+    border: 1px solid #8d8175;
+    box-sizing: border-box;
+  }
+
+  .jj-custom-event-banner__close {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0;
+  }
+
+  .jj-custom-event-banner__close::before,
+  .jj-custom-event-banner__close::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 8px;
+    width: 1.5px;
+    height: 16px;
+    background: #222;
+  }
+
+  .jj-custom-event-banner__close::before {
+    transform: rotate(45deg);
+  }
+  .jj-custom-event-banner__close::after {
+    transform: rotate(-45deg);
+  }
+
+  @media all and (max-width: 767px) {
+    .jj-custom-event-banner {
+      height: 44px;
+      padding: 0 42px 0 10px;
+    }
+
+    .jj-custom-event-banner__message {
+      gap: 7px;
+    }
+    .jj-custom-event-banner__sparkle {
+      font-size: 11px;
+    }
+    .jj-custom-event-banner__label {
+      font-size: 11px;
+    }
+    .jj-custom-event-banner__divider {
+      height: 11px;
+    }
+    .jj-custom-event-banner__text {
+      font-size: 12px;
+    }
+    .jj-custom-event-banner__controls {
+      right: 12px;
+    }
+    .jj-custom-event-banner__today {
+      display: none;
+    }
+  }
+
+  @media all and (max-width: 360px) {
+    .jj-custom-event-banner__message {
+      gap: 5px;
+    }
+    .jj-custom-event-banner__sparkle {
+      display: none;
+    }
+    .jj-custom-event-banner__label {
+      font-size: 10px;
+    }
+    .jj-custom-event-banner__text {
+      font-size: 11px;
+    }
+  }
+</style>
+
+<div class="jj-custom-event-banner" id="jjCustomEventBanner">
+  <div class="jj-custom-event-banner__message">
+    <span class="jj-custom-event-banner__sparkle">✦</span>
+    <span class="jj-custom-event-banner__label">OPEN EVENT</span>
+    <span class="jj-custom-event-banner__divider"></span>
+    <span class="jj-custom-event-banner__text">전 상품 무료배송</span>
+    <span class="jj-custom-event-banner__sparkle">✦</span>
+  </div>
+
+  <div class="jj-custom-event-banner__controls">
+    <button
+      type="button"
+      class="jj-custom-event-banner__today"
+      id="jjHideToday"
+    >
+      <span class="jj-custom-event-banner__checkbox"></span>
+      오늘 하루 보지 않기
+    </button>
+
+    <button
+      type="button"
+      class="jj-custom-event-banner__close"
+      id="jjCloseBanner"
+      aria-label="배너 닫기"
+    >
+      닫기
+    </button>
+  </div>
 </div>
-<header id="header" class="layout1" data-ez-layout="layout1" data-ez="contents-0n7ez6w-1">
-	<ez-prop data-version="1.0.0" type="layout">
-		<ez-var data-prop="layout" data-namespace="ez.layout.header.layout" data-type="array">
-			<ez-item data-id="layout3" data-name="1단 기본형"></ez-item>
-			<ez-item data-id="layout2" data-name="2단 좌측형"></ez-item>
-			<ez-item data-id="layout4" data-name="2단 혼합형"></ez-item>
-			<ez-item data-id="layout1" data-name="2단 중앙형 (아이콘 하단)"></ez-item>
-			<ez-item data-id="layout5" data-name="2단 중앙형 (아이콘 상단)"></ez-item>
-			<ez-item data-id="layout6" data-name="2단 슬라이딩 메뉴 노출형"></ez-item>
-  	    </ez-var>
-	</ez-prop>
-	<div class="inner">
-		<div class="toparea display_pc_only">
-			<div class="toparea_shoppinginfo">
-				<div module="Layout_multishopList">
-					<button type="button" class="toggle">{$current_language} <i aria-hidden="true" class="icon icoArrowBottom"></i></button>
-					<ul module="Layout_multishopListitem">
-						<li class="{$selected_class}">
-							<a href="//{$shop_domain}/">{$locale_language}</a>
-						</li>
-						<li class="{$selected_class}">
-							<a href="//{$shop_domain}/">{$locale_language}</a>
-						</li>
-					</ul>
-				</div>
-                <div data-ez-group="shopping-info" data-ez-role="list">
-				<ul module="Layout_shoppingInfo">
-					<li class="{$use_mileage|display}"><a href="/myshop/mileage/historyList.html">{$mileage_name} <strong>{$mileage}</strong></a></li>
-					<li class="{$use_deposit|display}"><a href="/myshop/deposits/historyList.html">{$deposit_name} <strong>{$deposit}</strong></a></li>
-					<li class="{$use_coupon_cnt|display}"><a href="/myshop/coupon/coupon.html">쿠폰 <strong>{$coupon_cnt}</strong></a></li>
-					<li class="{$use_interest_prd|display}"><a href="/myshop/wish_list.html">관심상품 <strong>{$interest_prd_cnt}</strong></a></li>
-					<li class="{$use_like_product_cnt|display}">{$like_prd_tag}</li>
-					<li class="{$use_basket_cnt|display}"><a href="/order/basket.html">장바구니 <strong>{$basket_cnt}<span class="{$use_basket_price|display}">({$basket_price})</span></strong></a></li>
-				</ul>
-                </div>
-			</div><!-- //toparea_shoppinginfo -->
 
-			<div class="toparea_state" data-ez-group="top-util-menu" data-ez-role="list">
-				<a data-ez-item="join" module="Layout_statelogoff" href="/member/agreement.html">회원가입</a>
-				<a data-ez-item="login" module="Layout_statelogoff" href="/member/login.html">로그인</a>
-				<a data-ez-item="modify" module="Layout_stateLogon" href="/member/modify.html">내정보수정</a>
-				<a data-ez-item="logout" module="Layout_stateLogon" href="{$action_logout}">로그아웃</a>
-				<a data-ez-item="order" href="/myshop/order/list.html">주문조회</a>
-				<a data-ez-item="mypage" module="Layout_stateLogon" href="/myshop/index.html">마이페이지</a>
-				<a data-ez-item="recent" href="/product/recent_view_product.html">최근본상품</a>
-				<div class="toparea_state_board">
-					<a data-ez-item="board" href="#none">고객센터 <i aria-hidden="true" class="icon icoArrowBottom"></i></a>
-					<ul module="Layout_BoardInfo">
-						<li><a href="{$link_board_list}">{$board_name}</a></li>
-						<li><a href="{$link_board_list}">{$board_name}</a></li>
-					</ul>
-				</div>
-			</div><!-- //toparea_state -->
-		</div><!-- //toparea -->
+<script>
+  (function () {
+    var banner = document.getElementById("jjCustomEventBanner");
+    var closeButton = document.getElementById("jjCloseBanner");
+    var todayButton = document.getElementById("jjHideToday");
+    if (!banner) return;
 
-		<div class="top_nav_box" id="top_nav_box">
-			<div class="top_logo" module="Layout_LogoTop"><a href="/">{$mall_name}</a></div><!-- //top_logo -->
-			<div class="top_nav"><a href="javascript:;" class="eNavFold"><i aria-hidden="true" class="icon icoNav"></i></a></div>
+    var storageKey = "jj_event_banner_hide_until";
 
-			<div data-ez-module="menu-main/1" data-ez-mode="manual">
-        <div class="xans-element- xans-layout xans-layout-category top_category">
-<ul><li><a href="/category/(%EB%8C%80%EB%B6%84%EB%A5%98)-Outerwear/24/">(대분류) Outerwear</a><ul class="sub_cate01"><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Jackets/29/">(중분류) Jackets</a></li><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Coats/30/">(중분류) Coats</a></li><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Blazers/31/">(중분류) Blazers</a></li></ul></li><li><a href="/category/(%EB%8C%80%EB%B6%84%EB%A5%98)-Tops/25/">(대분류) Tops</a><ul class="sub_cate01"><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Tees/32/">(중분류) Tees</a><ul class="sub_cate02"><li><a href="/category/(%EC%86%8C%EB%B6%84%EB%A5%98)-Short-Sleeve/36/">(소분류) Short Sleeve</a><ul class="sub_cate03"><li><a href="/category/(%EC%83%81%EC%84%B8%EB%B6%84%EB%A5%98)-Cropped/38/">(상세분류) Cropped</a></li><li><a href="/category/(%EC%83%81%EC%84%B8%EB%B6%84%EB%A5%98)-Graphic-Tees/39/">(상세분류) Graphic Tees</a></li></ul></li><li><a href="/category/(%EC%86%8C%EB%B6%84%EB%A5%98)-Long-Sleeve/37/">(소분류) Long Sleeve</a><ul class="sub_cate03"><li><a href="/category/(%EC%83%81%EC%84%B8%EB%B6%84%EB%A5%98)-Cropped/40/">(상세분류) Cropped</a></li><li><a href="/category/(%EC%83%81%EC%84%B8%EB%B6%84%EB%A5%98)-Graphic-Tees/41/">(상세분류) Graphic Tees</a></li></ul></li></ul></li><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Shirts/33/">(중분류) Shirts</a></li></ul></li><li><a href="/category/(%EB%8C%80%EB%B6%84%EB%A5%98)-Dresses/26/">(대분류) Dresses</a></li></ul>
-</div>
-      </div><!-- //menu-main/1 -->
+    function isHiddenToday() {
+      try {
+        var saved = localStorage.getItem(storageKey);
+        return saved && Date.now() < Number(saved);
+      } catch (e) {
+        return false;
+      }
+    }
 
-			<div class="top_mypage">
-				<a href="javascript:;" class="eSearch"><!--@import(/svg/icon-search.html)--></a>
-				<a href="/myshop/index.html"><!--@import(/svg/icon-user.html)--></a>
-				<a href="/order/basket.html" module="Layout_orderBasketcount"><!--@import(/svg/icon-cart.html)--><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
-			</div><!-- //top_mypage -->
-		</div><!-- //top_nav_box -->
-	</div><!-- //inner -->
+    function closeBanner() {
+      banner.style.display = "none";
+      window.dispatchEvent(new Event("jjBannerChanged"));
+    }
+
+    function hideToday() {
+      try {
+        var now = new Date();
+        var tomorrow = new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate() + 1,
+          0,
+          0,
+          0,
+        );
+        localStorage.setItem(storageKey, String(tomorrow.getTime()));
+      } catch (e) {}
+      closeBanner();
+    }
+
+    if (isHiddenToday()) closeBanner();
+    if (closeButton) closeButton.addEventListener("click", closeBanner);
+    if (todayButton) todayButton.addEventListener("click", hideToday);
+  })();
+</script>
+
+<!-- =========================================
+     // JUN & JAY CUSTOM OPEN EVENT BANNER
+========================================== -->
+
+<!-- =========================================================
+     JUN & JAY CUSTOM HEADER
+========================================================= -->
+
+<style>
+  /* =========================================================
+     RESET
+  ========================================================= */
+
+  #jjHeader,
+  #jjHeader * {
+    box-sizing: border-box;
+  }
+
+  #jjHeader {
+    position: relative;
+    z-index: 9000;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: #fff;
+    border-bottom: 1px solid #eeeeee;
+
+    font-family: "Montserrat", "Noto Sans KR", Arial, sans-serif;
+
+    transition:
+      box-shadow 0.25s ease,
+      background 0.25s ease;
+  }
+
+  #jjHeader a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* =========================================================
+     INNER
+  ========================================================= */
+
+  .jj-header-inner {
+    width: 92%;
+    max-width: 1760px;
+
+    margin: 0 auto;
+  }
+
+  /* =========================================================
+     PC TOP UTIL
+  ========================================================= */
+
+  .jj-header-util {
+    position: relative;
+
+    width: 100%;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #777;
+  }
+
+  /* 왼쪽 */
+  .jj-header-util__left {
+    display: flex;
+    align-items: center;
+
+    min-width: 300px;
+  }
+
+  .jj-header-shopping-info ul {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .jj-header-shopping-info li {
+    margin: 0 14px 0 0;
+    padding: 0;
+  }
+
+  .jj-header-shopping-info li a,
+  .jj-header-shopping-info li,
+  .jj-header-shopping-info strong {
+    color: #777;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1;
+  }
+
+  /* 오른쪽 */
+  .jj-header-util__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    min-width: 300px;
+  }
+
+  .jj-header-util__right > a,
+  .jj-header-util__right .jj-cs-menu > a {
+    position: relative;
+
+    margin-left: 15px;
+
+    color: #666;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1;
+  }
+
+  .jj-header-util__right > a:hover,
+  .jj-header-util__right .jj-cs-menu > a:hover {
+    color: #111;
+  }
+
+  /* =========================================================
+     고객센터
+  ========================================================= */
+
+  .jj-cs-menu {
+    position: relative;
+  }
+
+  .jj-cs-menu > a {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+  }
+
+  .jj-cs-arrow {
+    width: 6px;
+    height: 6px;
+
+    border-right: 1px solid #777;
+    border-bottom: 1px solid #777;
+
+    transform: rotate(45deg) translateY(-2px);
+  }
+
+  .jj-cs-menu ul {
+    position: absolute;
+
+    top: 22px;
+    right: 0;
+
+    z-index: 100;
+
+    display: none;
+
+    min-width: 130px;
+
+    margin: 0;
+    padding: 10px 0;
+
+    list-style: none;
+
+    background: #fff;
+
+    border: 1px solid #e5e5e5;
+  }
+
+  .jj-cs-menu:hover ul {
+    display: block;
+  }
+
+  .jj-cs-menu ul li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .jj-cs-menu ul li a {
+    display: block;
+
+    padding: 9px 15px;
+
+    color: #777;
+
+    font-size: 12px;
+
+    text-align: center;
+
+    white-space: nowrap;
+  }
+
+  .jj-cs-menu ul li a:hover {
+    color: #111;
+
+    background: #fafafa;
+  }
+
+  /* =========================================================
+     LOGO ROW
+  ========================================================= */
+
+  .jj-header-main {
+    position: relative;
+
+    width: 100%;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .jj-header-logo {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .jj-header-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #111;
+
+    font-size: 42px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    white-space: nowrap;
+  }
+
+  .jj-header-logo img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 320px;
+    max-height: 70px;
+  }
+
+  /* =========================================================
+     MOBILE MENU BUTTON
+  ========================================================= */
+
+  .jj-header-menu-button {
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: none;
+
+    width: 30px;
+    height: 30px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+  .jj-header-menu-button span {
+    position: absolute;
+
+    left: 2px;
+
+    width: 24px;
+    height: 1.5px;
+
+    background: #111;
+  }
+
+  .jj-header-menu-button span:nth-child(1) {
+    top: 7px;
+  }
+
+  .jj-header-menu-button span:nth-child(2) {
+    top: 14px;
+  }
+
+  .jj-header-menu-button span:nth-child(3) {
+    top: 21px;
+  }
+
+  /* =========================================================
+     RIGHT ICONS
+  ========================================================= */
+
+  .jj-header-icons {
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 27px;
+  }
+
+  .jj-header-icons a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    color: #111;
+  }
+
+  .jj-header-icons svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .jj-header-icons .count {
+    position: absolute;
+
+    top: -8px;
+    right: -10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 17px;
+    height: 17px;
+
+    padding: 0 4px;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    color: #fff;
+
+    font-size: 10px;
+    line-height: 17px;
+  }
+
+  /* =========================================================
+     CATEGORY
+  ========================================================= */
+
+  .jj-header-category-wrap {
+    position: relative;
+
+    width: 100%;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+  }
+
+  .jj-header-category {
+    position: relative;
+
+    height: 62px;
+
+    overflow: visible;
+  }
+
+  .jj-header-category__list {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    gap: 52px;
+
+    height: 62px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    overflow: visible;
+  }
+
+  .jj-header-category__item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 62px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .jj-header-category__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 62px;
+
+    color: #111 !important;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    text-decoration: none !important;
+  }
+
+  /* hover underline */
+
+  .jj-header-category__link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 14px;
+
+    width: 0;
+    height: 1px;
+
+    background: #111;
+
+    transform: translateX(-50%);
+
+    transition: width 0.2s ease;
+  }
+
+  /* =========================================================
+     COMPACT HEADER - 스크롤 시 상단 유틸 숨김 / 높이 축소
+  ========================================================= */
+
+  #jjHeader .jj-header-util {
+    display: flex !important;
+    height: 38px;
+    overflow: hidden;
+    opacity: 1;
+    transition:
+      height 0.28s ease,
+      opacity 0.2s ease;
+  }
+
+  /* PC 상단 유틸: 왼쪽 쇼핑 정보는 제거하고, 오른쪽 메뉴만 우측 정렬 */
+  #jjHeader .jj-header-util__left {
+    display: none !important;
+  }
+
+  #jjHeader .jj-header-util__right {
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-end;
+  }
+
+  #jjHeader.jj-header--scrolled .jj-header-util {
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #jjHeader .jj-header-shopping-info li a,
+  #jjHeader .jj-header-shopping-info li,
+  #jjHeader .jj-header-shopping-info strong,
+  #jjHeader .jj-header-util__right > a,
+  #jjHeader .jj-header-util__right .jj-cs-menu > a {
+    font-size: 11px;
+  }
+
+  #jjHeader .jj-header-main {
+    height: 76px;
+  }
+
+  #jjHeader .jj-header-logo a {
+    font-size: 34px;
+  }
+
+  #jjHeader .jj-header-logo img {
+    max-width: 260px;
+    max-height: 52px;
+  }
+
+  #jjHeader .jj-header-category-wrap,
+  #jjHeader .jj-header-category,
+  #jjHeader .jj-header-category__list,
+  #jjHeader .jj-header-category__item,
+  #jjHeader .jj-header-category__link {
+    height: 48px;
+  }
+
+  #jjHeader .jj-header-category__list {
+    gap: 42px;
+  }
+
+  #jjHeader .jj-header-category__link {
+    font-size: 14px;
+  }
+
+  #jjHeader .jj-header-category__link::after {
+    bottom: 9px;
+  }
+
+  /* 모바일에서는 상단 유틸을 처음부터 표시하지 않음 */
+  @media all and (max-width: 1024px) {
+    #jjHeader .jj-header-util {
+      display: none !important;
+    }
+  }
+
+  .jj-header-category__item:hover > .jj-header-category__link::after {
+    width: 100%;
+  }
+
+  /* =========================================================
+     SUB CATEGORY
+  ========================================================= */
+
+  .jj-header-sub {
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(8px);
+
+    z-index: 99999;
+
+    min-width: 185px;
+
+    margin: 0;
+    padding: 11px 0;
+
+    list-style: none;
+
+    background: #fff;
+
+    border: 1px solid #e9e9e9;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease,
+      visibility 0.18s ease;
+  }
+
+  .jj-header-category__item:hover > .jj-header-sub,
+  .jj-header-category__item:focus-within > .jj-header-sub {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .jj-header-sub__item {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .jj-header-sub__link {
+    display: block;
+
+    padding: 10px 22px;
+
+    color: #777 !important;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    text-decoration: none !important;
+  }
+
+  .jj-header-sub__link:hover,
+  .jj-header-sub__link:focus {
+    color: #111 !important;
+
+    background: #fafafa;
+  }
+
+  /* 3차 / 4차 */
+
+  .jj-header-sub .jj-header-sub {
+    top: -1px;
+    left: 100%;
+
+    transform: translateX(5px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+  }
+
+  .jj-header-sub__item:hover > .jj-header-sub,
+  .jj-header-sub__item:focus-within > .jj-header-sub {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateX(0);
+  }
+
+  /* =========================================================
+     TABLET
+  ========================================================= */
+
+  @media all and (max-width: 1200px) {
+    .jj-header-category__list {
+      gap: 30px;
+    }
+
+    .jj-header-category__link {
+      font-size: 14px;
+    }
+  }
+
+  /* =========================================================
+     MOBILE / TABLET
+  ========================================================= */
+
+  @media all and (max-width: 1024px) {
+    .jj-header-inner {
+      width: 92%;
+    }
+
+    .jj-header-util {
+      display: none;
+    }
+
+    .jj-header-main {
+      height: 68px;
+    }
+
+    .jj-header-menu-button {
+      display: block;
+    }
+
+    .jj-header-logo a {
+      font-size: 26px;
+    }
+
+    .jj-header-logo img {
+      max-width: 190px;
+      max-height: 38px;
+    }
+
+    .jj-header-category-wrap {
+      display: none;
+    }
+
+    .jj-header-icons {
+      gap: 15px;
+    }
+
+    .jj-header-icons .jj-user-icon {
+      display: none;
+    }
+
+    .jj-header-icons a {
+      width: 24px;
+      height: 24px;
+    }
+
+    .jj-header-icons svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .jj-header-icons .count {
+      top: -8px;
+      right: -8px;
+
+      min-width: 15px;
+      height: 15px;
+
+      padding: 0 3px;
+
+      font-size: 9px;
+      line-height: 15px;
+    }
+  }
+
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+
+  @media all and (max-width: 767px) {
+    .jj-header-inner {
+      width: calc(100% - 30px);
+    }
+
+    .jj-header-main {
+      height: 64px;
+    }
+
+    .jj-header-logo a {
+      font-size: 24px;
+    }
+
+    .jj-header-logo img {
+      max-width: 165px;
+      max-height: 34px;
+    }
+
+    .jj-header-menu-button {
+      width: 26px;
+      height: 26px;
+    }
+
+    .jj-header-menu-button span {
+      width: 21px;
+    }
+
+    .jj-header-icons {
+      gap: 12px;
+    }
+
+    .jj-header-icons a {
+      width: 23px;
+      height: 23px;
+    }
+  }
+</style>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header id="jjHeader">
+  <div class="jj-header-inner">
+    <!-- PC 상단 유틸 -->
+    <div class="jj-header-util">
+      <!-- 왼쪽 쇼핑정보 -->
+      <div class="jj-header-util__left">
+        <div class="jj-header-shopping-info">
+          <ul module="Layout_shoppingInfo">
+            <li class="{$use_mileage|display}">
+              <a href="/myshop/mileage/historyList.html">
+                {$mileage_name} {$mileage}
+              </a>
+            </li>
+
+            <li class="{$use_coupon_cnt|display}">
+              <a href="/myshop/coupon/coupon.html"> 쿠폰 {$coupon_cnt} </a>
+            </li>
+
+            <li class="{$use_interest_prd|display}">
+              <a href="/myshop/wish_list.html">
+                관심상품 {$interest_prd_cnt}
+              </a>
+            </li>
+
+            <li class="{$use_basket_cnt|display}">
+              <a href="/order/basket.html"> 장바구니 {$basket_cnt} </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 오른쪽 메뉴 -->
+      <div
+        class="jj-header-util__right"
+        data-ez-group="top-util-menu"
+        data-ez-role="list"
+      >
+        <a module="Layout_statelogoff" href="/member/agreement.html">
+          회원가입
+        </a>
+
+        <a module="Layout_statelogoff" href="/member/login.html"> 로그인 </a>
+
+        <a module="Layout_stateLogon" href="/member/modify.html">
+          내정보수정
+        </a>
+
+        <a module="Layout_stateLogon" href="{$action_logout}"> 로그아웃 </a>
+
+        <a href="/myshop/order/list.html"> 주문조회 </a>
+
+        <a module="Layout_stateLogon" href="/myshop/index.html"> 마이페이지 </a>
+
+        <a href="/product/recent_view_product.html"> 최근본상품 </a>
+
+        <!-- 고객센터 -->
+        <div class="jj-cs-menu">
+          <a href="#none">
+            고객센터
+            <span class="jj-cs-arrow"></span>
+          </a>
+
+          <ul module="Layout_BoardInfo">
+            <li>
+              <a href="{$link_board_list}"> {$board_name} </a>
+            </li>
+
+            <li>
+              <a href="{$link_board_list}"> {$board_name} </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="jj-header-main">
+      <!-- 모바일 메뉴 -->
+      <button
+        type="button"
+        class="jj-header-menu-button eNavFold"
+        aria-label="메뉴 열기"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- LOGO -->
+      <div class="jj-header-logo" module="Layout_LogoTop">
+        <a href="/"> {$mall_name} </a>
+      </div>
+
+      <!-- ICONS -->
+      <div class="jj-header-icons">
+        <!-- SEARCH -->
+        <a href="javascript:;" class="eSearch" aria-label="검색">
+          <!--@import(/svg/icon-search.html)-->
+        </a>
+
+        <!-- USER -->
+        <a
+          href="/myshop/index.html"
+          class="jj-user-icon"
+          aria-label="마이페이지"
+        >
+          <!--@import(/svg/icon-user.html)-->
+        </a>
+
+        <!-- CART -->
+        <a
+          href="/order/basket.html"
+          module="Layout_orderBasketcount"
+          aria-label="장바구니"
+        >
+          <!--@import(/svg/icon-cart.html)-->
+
+          <span
+            class="count {$basket_count_display|display} {$basket_count_display_class}"
+          >
+            <span class="{$basket_count_class}"> {$basket_count} </span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         CATEGORY
+    ====================================================== -->
+
+    <div class="jj-header-category-wrap">
+      <nav class="jj-header-category" aria-label="상품 카테고리">
+        <ul id="jjCategoryMenu" class="jj-header-category__list"></ul>
+      </nav>
+    </div>
+  </div>
 </header>
-<!--#ez="1/28"-->
+
+<!-- =========================================================
+     CATEGORY AUTO LOAD
+========================================================= -->
+
+<script>
+  (function () {
+    var MENU_ID = "jjCategoryMenu";
+    var ENDPOINT = "/exec/front/Product/SubCategory";
+
+    function getMenu() {
+      return document.getElementById(MENU_ID);
+    }
+
+    function categoryHref(item) {
+      return (
+        item.link_product_list ||
+        "/product/list.html?cate_no=" + encodeURIComponent(item.cate_no)
+      );
+    }
+
+    function getChildren(categories, parentCateNo) {
+      return categories.filter(function (item) {
+        return String(item.parent_cate_no) === String(parentCateNo);
+      });
+    }
+
+    function makeSubMenu(categories, parentCateNo, depth) {
+      var children = getChildren(categories, parentCateNo);
+
+      if (!children.length) {
+        return null;
+      }
+
+      var ul = document.createElement("ul");
+
+      ul.className = "jj-header-sub jj-header-sub--depth-" + depth;
+
+      children.forEach(function (item) {
+        var li = document.createElement("li");
+
+        li.className = "jj-header-sub__item";
+
+        li.setAttribute("data-cate-no", item.cate_no);
+
+        var a = document.createElement("a");
+
+        a.className = "jj-header-sub__link";
+
+        a.href = categoryHref(item);
+
+        a.textContent = item.name;
+
+        li.appendChild(a);
+
+        /*
+         * depth 1 = 2차
+         * depth 2 = 3차
+         * depth 3 = 4차
+         */
+        if (depth < 3) {
+          var nested = makeSubMenu(categories, item.cate_no, depth + 1);
+
+          if (nested) {
+            li.appendChild(nested);
+          }
+        }
+
+        ul.appendChild(li);
+      });
+
+      return ul;
+    }
+
+    function renderCategories(categories) {
+      var menu = getMenu();
+
+      if (!menu) {
+        return;
+      }
+
+      var topCategories = getChildren(categories, 1);
+
+      menu.innerHTML = "";
+
+      topCategories.forEach(function (item) {
+        var li = document.createElement("li");
+
+        li.className = "jj-header-category__item";
+
+        li.setAttribute("data-cate-no", item.cate_no);
+
+        var a = document.createElement("a");
+
+        a.className = "jj-header-category__link";
+
+        a.href = categoryHref(item);
+
+        /*
+         * 혹시 카테고리명이
+         * "(대분류) Outerwear"
+         * 형태라면 앞의 (대분류) 제거
+         */
+        a.textContent = String(item.name || "").replace(
+          /^\s*\(대분류\)\s*/i,
+          "",
+        );
+
+        li.appendChild(a);
+
+        var subMenu = makeSubMenu(categories, item.cate_no, 1);
+
+        if (subMenu) {
+          li.appendChild(subMenu);
+        }
+
+        menu.appendChild(li);
+      });
+    }
+
+    function loadCategories(attempt) {
+      attempt = attempt || 1;
+
+      fetch(ENDPOINT, {
+        method: "GET",
+        credentials: "same-origin",
+        cache: "no-store",
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+          }
+
+          return response.json();
+        })
+
+        .then(function (categories) {
+          if (!Array.isArray(categories)) {
+            throw new Error("Invalid category response");
+          }
+
+          renderCategories(categories);
+        })
+
+        .catch(function (error) {
+          if (attempt < 3) {
+            window.setTimeout(function () {
+              loadCategories(attempt + 1);
+            }, 350 * attempt);
+
+            return;
+          }
+
+          console.warn("JUN & JAY category load failed:", error);
+        });
+    }
+
+    function initCategoryMenu() {
+      var menu = getMenu();
+
+      if (!menu) {
+        return;
+      }
+
+      if (menu.getAttribute("data-jj-initialized") === "true") {
+        return;
+      }
+
+      menu.setAttribute("data-jj-initialized", "true");
+
+      loadCategories(1);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initCategoryMenu, {
+        once: true,
+      });
+    } else {
+      initCategoryMenu();
+    }
+  })();
+</script>
+
+<!-- =========================================================
+     HEADER FIXED - BODY DIRECT MODE
+     탑배너는 처음에 보이고, 스크롤하면 위로 사라짐
+     헤더는 계속 화면 상단에 남음
+========================================================= -->
+<script>
+  (function () {
+    function initJjFixedHeader() {
+      var header = document.getElementById("jjHeader");
+      var banner = document.getElementById("jjCustomEventBanner");
+
+      if (!header || header.getAttribute("data-jj-body-fixed") === "true")
+        return;
+
+      header.setAttribute("data-jj-body-fixed", "true");
+
+      /* 헤더가 원래 있던 자리에 공간을 남긴다 */
+      var spacer = document.createElement("div");
+      spacer.id = "jjHeaderBodySpacer";
+      spacer.style.width = "100%";
+      spacer.style.height = header.offsetHeight + "px";
+      header.parentNode.insertBefore(spacer, header);
+
+      /* transform/overflow가 걸린 카페24 부모에서 헤더를 body로 직접 이동 */
+      document.body.appendChild(header);
+
+      header.style.setProperty("position", "fixed", "important");
+      header.style.setProperty("left", "0", "important");
+      header.style.setProperty("right", "0", "important");
+      header.style.setProperty("width", "100%", "important");
+      header.style.setProperty("z-index", "999999", "important");
+      header.style.setProperty("transform", "none", "important");
+      header.style.setProperty("opacity", "1", "important");
+      header.style.setProperty("visibility", "visible", "important");
+      header.style.setProperty("display", "block", "important");
+      header.style.setProperty("background", "#fff", "important");
+
+      function visibleBannerHeight() {
+        if (!banner) return 0;
+        var style = window.getComputedStyle(banner);
+        if (style.display === "none" || style.visibility === "hidden") return 0;
+        return banner.offsetHeight;
+      }
+
+      function updateHeaderPosition() {
+        var bannerHeight = visibleBannerHeight();
+        var scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop || 0;
+
+        /*
+         * 처음: 배너 바로 아래에 헤더
+         * 스크롤: 배너가 올라가는 만큼 헤더도 같이 위로 이동
+         * 배너를 다 지나면 top:0으로 고정
+         */
+        var top = Math.max(0, bannerHeight - scrollTop);
+
+        /* 첫 화면에서는 상단 유틸을 보여주고, 스크롤 시 위로 숨긴다 */
+        var shouldCompact = scrollTop > 10;
+        var compactChanged =
+          header.classList.contains("jj-header--scrolled") !== shouldCompact;
+
+        header.classList.toggle("jj-header--scrolled", shouldCompact);
+
+        header.style.setProperty("top", top + "px", "important");
+        spacer.style.height = header.offsetHeight + "px";
+
+        if (compactChanged) {
+          window.setTimeout(function () {
+            spacer.style.height = header.offsetHeight + "px";
+          }, 300);
+        }
+      }
+
+      updateHeaderPosition();
+
+      window.addEventListener("scroll", updateHeaderPosition, {
+        passive: true,
+      });
+      window.addEventListener("resize", updateHeaderPosition);
+      window.addEventListener("jjBannerChanged", updateHeaderPosition);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initJjFixedHeader, {
+        once: true,
+      });
+    } else {
+      initJjFixedHeader();
+    }
+  })();
+</script>
+
+<!-- =========================================================
+     JUN & JAY MOBILE MENU
+========================================================= -->
+
+<style>
+  /* 모바일 메뉴 배경 */
+  .jj-mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999998;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  /* 모바일 메뉴 본체 */
+  .jj-mobile-menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 9999999;
+
+    width: min(84vw, 360px);
+    height: 100vh;
+    height: 100dvh;
+
+    padding: 0;
+
+    background: #fff;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.3s ease;
+
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* OPEN */
+  body.jj-mobile-menu-open {
+    overflow: hidden;
+  }
+
+  body.jj-mobile-menu-open .jj-mobile-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  body.jj-mobile-menu-open .jj-mobile-menu {
+    transform: translateX(0);
+  }
+
+  /* 메뉴 상단 */
+  .jj-mobile-menu__header {
+    position: relative;
+
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 22px;
+
+    border-bottom: 1px solid #eee;
+  }
+
+  .jj-mobile-menu__logo {
+    color: #111;
+
+    font-family: "Montserrat", "Noto Sans KR", Arial, sans-serif;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    text-decoration: none;
+  }
+
+  /* X 버튼 */
+  .jj-mobile-menu__close {
+    position: absolute;
+
+    top: 50%;
+    right: 20px;
+
+    width: 28px;
+    height: 28px;
+
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+  }
+
+  .jj-mobile-menu__close::before,
+  .jj-mobile-menu__close::after {
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    left: 13px;
+
+    width: 1px;
+    height: 18px;
+
+    background: #111;
+  }
+
+  .jj-mobile-menu__close::before {
+    transform: rotate(45deg);
+  }
+
+  .jj-mobile-menu__close::after {
+    transform: rotate(-45deg);
+  }
+
+  /* 카테고리 */
+  .jj-mobile-category {
+    margin: 0;
+    padding: 18px 22px 30px;
+
+    list-style: none;
+  }
+
+  .jj-mobile-category > li {
+    margin: 0;
+    padding: 0;
+
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .jj-mobile-category__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 55px;
+  }
+
+  .jj-mobile-category__link {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 55px;
+
+    color: #111 !important;
+
+    font-family: "Montserrat", "Noto Sans KR", Arial, sans-serif;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    text-decoration: none !important;
+  }
+
+  /* + 버튼 */
+  .jj-mobile-category__toggle {
+    position: relative;
+
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+  .jj-mobile-category__toggle::before,
+  .jj-mobile-category__toggle::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 12px;
+    height: 1px;
+
+    background: #777;
+
+    transform: translate(-50%, -50%);
+
+    transition: transform 0.2s ease;
+  }
+
+  .jj-mobile-category__toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .jj-mobile-category__item.is-open
+    > .jj-mobile-category__row
+    .jj-mobile-category__toggle::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  /* 서브메뉴 */
+  .jj-mobile-sub {
+    display: none;
+
+    margin: 0;
+    padding: 0 0 15px 14px;
+
+    list-style: none;
+  }
+
+  .jj-mobile-category__item.is-open > .jj-mobile-sub {
+    display: block;
+  }
+
+  .jj-mobile-sub li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .jj-mobile-sub a {
+    display: block;
+
+    padding: 8px 0;
+
+    color: #777 !important;
+
+    font-family: "Montserrat", "Noto Sans KR", Arial, sans-serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    text-decoration: none !important;
+  }
+
+  /* 하단 메뉴 */
+  .jj-mobile-menu__bottom {
+    padding: 5px 22px 35px;
+  }
+
+  .jj-mobile-menu__bottom a {
+    display: block;
+
+    padding: 8px 0;
+
+    color: #777 !important;
+
+    font-size: 12px;
+
+    text-decoration: none !important;
+  }
+
+  /* PC에서는 절대 안 보이게 */
+  @media all and (min-width: 1025px) {
+    .jj-mobile-menu,
+    .jj-mobile-menu-overlay {
+      display: none !important;
+    }
+  }
+</style>
+
+<div class="jj-mobile-menu-overlay" id="jjMobileMenuOverlay"></div>
+
+<aside class="jj-mobile-menu" id="jjMobileMenu" aria-hidden="true">
+  <div class="jj-mobile-menu__header">
+    <a href="/" class="jj-mobile-menu__logo"> JUN & JAY </a>
+
+    <button
+      type="button"
+      class="jj-mobile-menu__close"
+      id="jjMobileMenuClose"
+      aria-label="메뉴 닫기"
+    ></button>
+  </div>
+
+  <!-- 카테고리는 JS로 자동 생성 -->
+  <ul class="jj-mobile-category" id="jjMobileCategory"></ul>
+
+  <div class="jj-mobile-menu__bottom">
+    <a href="/member/login.html"> LOGIN </a>
+
+    <a href="/member/agreement.html"> JOIN </a>
+
+    <a href="/myshop/order/list.html"> ORDER </a>
+
+    <a href="/myshop/index.html"> MY PAGE </a>
+  </div>
+</aside>
+
+<script>
+  (function () {
+    function initJjMobileMenu() {
+      var openButton = document.querySelector(
+        "#jjHeader .jj-header-menu-button",
+      );
+
+      var menu = document.getElementById("jjMobileMenu");
+
+      var overlay = document.getElementById("jjMobileMenuOverlay");
+
+      var closeButton = document.getElementById("jjMobileMenuClose");
+
+      var categoryContainer = document.getElementById("jjMobileCategory");
+
+      if (
+        !openButton ||
+        !menu ||
+        !overlay ||
+        !closeButton ||
+        !categoryContainer
+      ) {
+        return;
+      }
+
+      /* =====================================
+     메뉴 열기
+  ===================================== */
+
+      function openMenu(event) {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        document.body.classList.add("jj-mobile-menu-open");
+
+        menu.setAttribute("aria-hidden", "false");
+      }
+
+      /* =====================================
+     메뉴 닫기
+  ===================================== */
+
+      function closeMenu() {
+        document.body.classList.remove("jj-mobile-menu-open");
+
+        menu.setAttribute("aria-hidden", "true");
+      }
+
+      /*
+       * Cafe24 기존 eNavFold 이벤트보다
+       * 우리가 만든 이벤트를 우선 실행
+       */
+      openButton.addEventListener("click", openMenu, true);
+
+      closeButton.addEventListener("click", closeMenu);
+
+      overlay.addEventListener("click", closeMenu);
+
+      /* ESC */
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeMenu();
+        }
+      });
+
+      /* =====================================
+     카테고리 불러오기
+  ===================================== */
+
+      function getChildren(categories, parent) {
+        return categories.filter(function (item) {
+          return String(item.parent_cate_no) === String(parent);
+        });
+      }
+
+      function categoryHref(item) {
+        return (
+          item.link_product_list ||
+          "/product/list.html?cate_no=" + encodeURIComponent(item.cate_no)
+        );
+      }
+
+      function makeSubMenu(categories, parentCateNo) {
+        var children = getChildren(categories, parentCateNo);
+
+        if (!children.length) {
+          return null;
+        }
+
+        var ul = document.createElement("ul");
+
+        ul.className = "jj-mobile-sub";
+
+        children.forEach(function (item) {
+          var li = document.createElement("li");
+
+          var a = document.createElement("a");
+
+          a.href = categoryHref(item);
+
+          a.textContent = String(item.name || "").replace(
+            /^\s*\(대분류\)\s*/i,
+            "",
+          );
+
+          li.appendChild(a);
+
+          ul.appendChild(li);
+        });
+
+        return ul;
+      }
+
+      function renderMobileCategories(categories) {
+        var topCategories = getChildren(categories, 1);
+
+        categoryContainer.innerHTML = "";
+
+        topCategories.forEach(function (item) {
+          var li = document.createElement("li");
+
+          li.className = "jj-mobile-category__item";
+
+          var row = document.createElement("div");
+
+          row.className = "jj-mobile-category__row";
+
+          var a = document.createElement("a");
+
+          a.className = "jj-mobile-category__link";
+
+          a.href = categoryHref(item);
+
+          a.textContent = String(item.name || "").replace(
+            /^\s*\(대분류\)\s*/i,
+            "",
+          );
+
+          row.appendChild(a);
+
+          var sub = makeSubMenu(categories, item.cate_no);
+
+          if (sub) {
+            var toggle = document.createElement("button");
+
+            toggle.type = "button";
+
+            toggle.className = "jj-mobile-category__toggle";
+
+            toggle.setAttribute("aria-label", "하위 메뉴 열기");
+
+            toggle.addEventListener("click", function (event) {
+              event.preventDefault();
+              event.stopPropagation();
+
+              li.classList.toggle("is-open");
+            });
+
+            row.appendChild(toggle);
+          }
+
+          li.appendChild(row);
+
+          if (sub) {
+            li.appendChild(sub);
+          }
+
+          categoryContainer.appendChild(li);
+        });
+      }
+
+      fetch("/exec/front/Product/SubCategory", {
+        method: "GET",
+        credentials: "same-origin",
+        cache: "no-store",
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+          }
+
+          return response.json();
+        })
+
+        .then(function (categories) {
+          if (Array.isArray(categories)) {
+            renderMobileCategories(categories);
+          }
+        })
+
+        .catch(function (error) {
+          console.warn("JUN & JAY mobile menu load failed:", error);
+        });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initJjMobileMenu, {
+        once: true,
+      });
+    } else {
+      initJjMobileMenu();
+    }
+  })();
+</script>
+
+<!-- =========================================================
+     // JUN & JAY CUSTOM HEADER
+========================================================= -->
